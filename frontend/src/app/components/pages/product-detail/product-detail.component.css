@@ -1,0 +1,51 @@
+body {
+    font-family: myFontSub !important; 
+
+}
+.add-to-cart {
+    background-color: #328320 !important;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+/* CSS tùy chỉnh cho button "Mua ngay" */
+.buy-now {
+    background-color: #0D5D9C !important;
+    color: #ffffff;
+}
+.price {
+
+    font-size: 16px;
+    color: #F52A41;
+    font-weight: bold;
+}
+.info h5, h6 {
+    height: 70%; /* Chiều cao cố định cho info */
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+
+    text-align: center;
+    font-size: 14px; 
+}
+
+.info a {
+    text-decoration: none; /* Loại bỏ gạch chân cho tên sản phẩm */ 
+    color: #0D5D9C; /* Màu chữ cho tên sản phẩm */
+}
+
+.info b {
+    color: #ff0000; /* Màu chữ cho giá tiền */
+    font-size: 16px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.relative-product {
+    font-weight: bold;
+    text-align: center;
+}
+.info h5 { /*cho chiều cao tên sản phẩm liên quan bằng nhau để giá các sản phẩm ngang hàng nhau*/
+    height: 50px;
+}

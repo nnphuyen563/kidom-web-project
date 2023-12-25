@@ -1,0 +1,58 @@
+body {
+    font-family: myFontSub;
+}
+
+.body {
+    background-color: #086A39;
+}
+.btncart {
+    height: 40px;
+    width: auto;
+    border-radius: 10px solid white;
+    text-align: center;
+    margin: 5px auto;
+    background-color: #086A39;
+}
+.btncart:hover {
+    background-color: #F52A41;
+}
+.cover {
+    border-radius: 10px
+}
+.thanhtieude {
+    width: 40%;   
+
+}
+.tieude {
+    margin-bottom: 20px;
+    margin-top: -50px;
+    color: white;
+}
+.price {
+    color: #F52A41
+}
+.texttieude {
+    color: white;
+}
+.h5 {
+    size: 10px;
+}
+/* Thêm hiệu ứng transition cho ảnh */
+.card {
+transition: transform 0.3s ease-in-out;
+}
+
+/* Áp dụng hiệu ứng zoom khi di chuột qua ảnh */
+.card:hover {
+    transform: scale(1.05);
+}
+
+.cat {
+    transition: transform 0.3s ease-in-out;
+}
+.cat:hover {
+    transform: scale(1.05);
+}
+.blog {
+    width: 100%;
+}
