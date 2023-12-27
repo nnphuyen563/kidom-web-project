@@ -1,3 +1,71 @@
-.footer {
-    background-color: red;
+body {
+    text-decoration: none !important;
+    color: #ffffff !important;
+    font-family: myFontSub !important;
+    font-size: 14px;
 }
+
+.container h5, ul {
+    color: #ffffff !important;
+}
+.front .social img { /*kích thước 3 ảnh social*/
+    width: 60px;
+}
+.front img {
+    width: 100%;   
+}
+
+.subscribe {
+    background-color: #F52A41 !important;
+    color: #ffffff !important;
+    border-radius: 15px !important;
+    width: 100%;
+}
+.container a{
+    text-decoration: none;
+}
+.checkbox-container {
+    display: flex; /*tạo 1 container flex, căn chỉnh theo chiều ngang*/
+    align-items: center; /* Canh giữa theo chiều dọc */
+  }
+  
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px; /* Khoảng cách giữa checkbox và label */
+    transform: scale(1.5); /* Thay đổi kích thước của checkbox */
+}
+.checkbox-container label{
+    font-size: 13px;
+}
+.front ul{
+    font-size: 13px;
+}
+.list-unstyled li {
+    margin-bottom: 10px; /* chỉnh khoảng cách giữa các thẻ li */
+}
+.img-container {
+    position: relative;
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 95%; /*Căn trên của hình ảnh*/
+    left: 35%;
+
+    transform: translate(-50%, -50%);
+    color: white; /* Màu chữ */
+}
+.inf {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items:first baseline; /* Căn giữa theo chiều dọc */
+}
+  
+.img-container, .right-column {
+    flex: 1; /* Phần tử chiếm toàn bộ khoảng trống còn lại */
+}
+.form-control {
+    border-radius: 15px !important;
+}
+
+

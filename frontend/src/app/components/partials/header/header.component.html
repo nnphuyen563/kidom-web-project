@@ -1,4 +1,102 @@
-<div routerLink="" class="container-fluid header text-white p-5 text-center">
+<!-- <div routerLink="" class="container-fluid header text-white p-5 text-center">
     HEADER
-</div>
-<app-menu></app-menu>
+</div> -->
+
+
+<body>
+    <div class="navbar pb-1"> <!--bg-transparent -->
+        <div class="container">
+            <div class="top-navbar row pt-4">
+                <div class="col-md-2">
+                    <!--button responsive-->
+                    <button class="navbar-toggler shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a href="#" class="d-block text-center">
+                        <img src="assets/img/logo/logo-red.png" class="img-fluid" alt="logo">
+                    </a>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 my-auto">
+                    <form role="search">
+                        <div class="input-group">
+                            <input type="search" placeholder="Tìm kiếm sản phẩm" class="form-control" />
+                            <button class="btn" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                    <ul class="nav justify-content-end nav-outer"> <!--căn lề 3 cái nút này-->
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-phone"></i> Tư vấn
+                            </a>
+                        </li>
+                        <li class="nav-item me-3"> <!--Icon giỏ hàng-->
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa-shopping-cart"></i> Giỏ hàng
+                            </a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="navbar" role="button">
+                                <i class="fa-regular fa-circle-user"></i> Đăng ký / Đăng nhập 
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="bottom-navbar navbar-expand-lg fixed-top" style="z-index: 999;">
+        <div class="container">
+            <div class="offcanvas offcanvas-start text-bg-dark row" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <!--Navbar header-->
+                <div class="offcanvas-header text-white border-bottom">
+                    <h5 class="offcanvas-title ps-3" id="offcanvasDarkNavbarLabel">Kidom</h5>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!--navbar body-->
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-9">
+                    <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Design by you</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown mx-3">
+                            <a class="nav-link dropdown-toggle" href="#">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item dropdown mx-3">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Phổ biến
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mx-3">
+                            <a class="nav-link dropdown-toggle" href="#">Mới</a>
+                        </li>
+                        <li class="nav-item dropdown mx-3">
+                            <a class="nav-link dropdown-toggle" href="#">Khuyến mãi</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="nav-link" href="#">Về Kidom</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>   
+                </div>   
+            </div>
+        </div>     
+    </nav>
+<!-- <app-menu></app-menu> -->
