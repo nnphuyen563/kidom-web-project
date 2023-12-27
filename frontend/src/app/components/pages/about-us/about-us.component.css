@@ -1,29 +1,4 @@
-@font-face {
-    font-family: myFontMain;
-    src: url("SVN-Billy Bold.ttf");
-}
-@font-face {
-    font-family: myFontSub;
-    src: url("SAYURI - Vag Light.ttf");
-}
 
-:root {
-    --fontColor: #676c70;
-    --main-color: #676c70;
-    --black: #222;
-    --white: #fff;
-    --light-black: #777;
-    --light-white: #fff9;
-    --dark-bg: rgba(0, 0, 0, .7);
-    --light-bg: #eee;
-    --border: .1rem solid var(--black);
-    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    --text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .3);
-    --button-background: #428ACA;
-    --blue: #156CC0;
-    --red: #E61313;
-    --line-color: rgba(103, 108, 112, 0.5);
-}
 #section0, #section1, #section2, #section3, #section4, #section5, #section6{
     border-radius: 10px; /* This removes the rounded corners */
     border: 2px solid rgba(211, 90, 138, 0.018);
