@@ -3,8 +3,7 @@ declare var addAcc: any;
 declare var removeAcc: any;
 declare var addName: any;
 declare var $: any;
-import 'frontend/src/assets/js/design-by-you.js';
-
+//import "src/assets/js/design-by-you.js";
 @Component({
   selector: 'app-design-by-you',
   templateUrl: './design-by-you.component.html',
