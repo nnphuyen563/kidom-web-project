@@ -22,16 +22,10 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-import { ReactiveFormsModule } from '@angular/forms';
-import { TitleComponent } from './components/partials/title/title.component';
-=======
->>>>>>> parent of 1f5615d (login/signup/home)
 
-=======
+import { ReactiveFormsModule } from '@angular/forms';
+//import { TitleComponent } from './components/partials/title/title.component';
 import { FormsModule } from '@angular/forms';
->>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,16 +51,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-<<<<<<< HEAD
     AppRoutingModule,
-<<<<<<< Updated upstream
     ReactiveFormsModule
-=======
-    FormsModule
->>>>>>> Stashed changes
-=======
-    AppRoutingModule
->>>>>>> parent of 1f5615d (login/signup/home)
   ],
   providers: [],
   bootstrap: [AppComponent]
