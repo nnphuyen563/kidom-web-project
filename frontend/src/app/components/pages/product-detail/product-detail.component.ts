@@ -13,7 +13,13 @@ export class ProductDetailComponent {
   products: Product[] = [];
   thumbnail: Product = new Product;
 
-  constructor(private productService:ProductService , private route:ActivatedRoute) { 
+  constructor(private productService:ProductService , 
+    private route:ActivatedRoute,
+    activatedRoute: ActivatedRoute) {
+      // activatedRoute.params.subscribe((params) =>{
+      //   if(params.id)
+      //   // this.products = productService.getProductById(params.id);
+      // })
     route.queryParams.subscribe(params => {
       this.products = productService.getDetail(params['id']);
       this.thumbnail = productService.getProductThumbnail(params['id']);
