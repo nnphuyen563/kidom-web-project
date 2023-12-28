@@ -1,18 +1,13 @@
-<!-- <div routerLink="" class="container-fluid header text-white p-5 text-center">
-    HEADER
-</div> -->
-
-
-<body>
-    <div class="navbar pb-1"> <!--bg-transparent -->
+<header>
+    <div class="navbar pb-1"> 
         <div class="container">
             <div class="top-navbar row pt-4">
                 <div class="col-md-2">
-                    <!--button responsive-->
+                  
                     <button class="navbar-toggler shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a href="#" class="d-block text-center">
+                    <a routerLink="/" class="logo d-block text-center">
                         <img src="assets/img/logo/logo-red.png" class="img-fluid" alt="logo">
                     </a>
                 </div>
@@ -20,27 +15,28 @@
                 <div class="col-md-5 my-auto">
                     <form role="search">
                         <div class="input-group">
-                            <input type="search" placeholder="Tìm kiếm sản phẩm" class="form-control" />
+                            <app-search></app-search>
+                            <!-- <input type="search" placeholder="Tìm kiếm sản phẩm" class="form-control" />
                             <button class="btn" type="submit">
                                 <i class="fa fa-search"></i>
-                            </button>
+                            </button> -->
                         </div>
                     </form>
                 </div>
                 <div class="col-md-4 d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                    <ul class="nav justify-content-end nav-outer"> <!--căn lề 3 cái nút này-->
+                    <ul class="nav justify-content-end nav-outer"> 
                         <li class="nav-item me-2">
-                            <a class="nav-link" href="#">
+                            <a routerLink="/blog" class="nav-link">
                                 <i class="fa-solid fa-phone"></i> Tư vấn
                             </a>
                         </li>
-                        <li class="nav-item me-3"> <!--Icon giỏ hàng-->
-                            <a class="nav-link" href="#">
+                        <li class="nav-item me-3"> 
+                            <a routerLink="/cart" class="nav-link">
                                 <i class="fa-solid fa-shopping-cart"></i> Giỏ hàng
                             </a>
                         </li>   
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="navbar" role="button">
+                            <a routerLink="/login" class="nav-link" id="navbar" role="button">
                                 <i class="fa-regular fa-circle-user"></i> Đăng ký / Đăng nhập 
                             </a>
                         </li>
@@ -49,6 +45,7 @@
             </div>
         </div>
     </div>
+
     <nav class="bottom-navbar navbar-expand-lg fixed-top" style="z-index: 999;">
         <div class="container">
             <div class="offcanvas offcanvas-start text-bg-dark row" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -59,44 +56,73 @@
                 </div>
                 <!--navbar body-->
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-9">
-                    <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                    <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Design by you</a>
+                            <a class="nav-link" routerLink="/design-by-you">Design by you</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                            <a routerLink="/" class="nav-link active" aria-current="page">Trang chủ</a>
                         </li>
                         <li class="nav-item dropdown mx-3">
-                            <a class="nav-link dropdown-toggle" href="#">Sản phẩm</a>
+                            <a routerLink="/" class="nav-link dropdown-toggle">Sản phẩm</a>
+                            <div class="dropdown-menu dropdown-menu-dark">
+                                <a routerLink="/" class="dropdown-item">Action</a>
+                                <a routerLink="/" class="dropdown-item">Another action</a>
+                                <a routerLink="/" class="dropdown-item">Something else here</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown mx-3">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a routerLink="/" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Phổ biến
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <div class="dropdown-menu dropdown-menu-dark">
+                                <a routerLink="/" class="dropdown-item">Action</a>
+                                <a routerLink="/" class="dropdown-item">Another action</a>
+                                <a routerLink="/" class="dropdown-item">Something else here</a>
+                            </div>
                         </li>
                         <li class="nav-item dropdown mx-3">
-                            <a class="nav-link dropdown-toggle" href="#">Mới</a>
+                            <a routerLink="/" class="nav-link dropdown-toggle">Mới</a>
                         </li>
                         <li class="nav-item dropdown mx-3">
-                            <a class="nav-link dropdown-toggle" href="#">Khuyến mãi</a>
+                            <a routerLink="/" class="nav-link dropdown-toggle">Khuyến mãi</a>
                         </li>
                         <li class="nav-item mx-3">
-                            <a class="nav-link" href="#">Về Kidom</a>
+                            <a routerLink="/" class="nav-link">Về Kidom</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a routerLink="/blog" class="nav-link">Blog</a>
                         </li>
                     </ul>   
                 </div>   
             </div>
         </div>     
     </nav>
-<!-- <app-menu></app-menu> -->
+</header>
+
+<!-- <header>
+    <div class="container">
+        <a routerLink ="/" class="logo">Kidom</a>
+        <nav>
+            <ul>
+                <li>
+                    <a routerLink="/login">Đăng nhập</a>
+                </li>
+                <li class="menu-container">
+                    <a routerLink="/dashboard">Tam</a>
+                    <div class="menu">
+                        <a routerLink="/profile">Profile</a>
+                        <a routerLink="/orders">Orders</a>
+                        <a>Logout</a>
+                    </div>
+                </li>
+                <li>
+                    <a routerLink="/cart-page">
+                        Cart<span>3</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header> -->
+

@@ -23,6 +23,9 @@ import { DesignByYouComponent } from './components/pages/design-by-you/design-by
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+//import { TitleComponent } from './components/partials/title/title.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,9 @@ import { PolicyComponent } from './components/pages/policy/policy.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

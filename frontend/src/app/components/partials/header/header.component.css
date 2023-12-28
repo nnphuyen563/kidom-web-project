@@ -1,10 +1,18 @@
 
+
 body {
     width: 100%;
     text-decoration: none !important;
     font-family: myFontSub !important;
 }
 /*top navbar*/
+header {
+    position: relative;
+    padding: 0;
+    font-family: myFontSub;
+}
+/*Top navbar*/
+
 .navbar {
     background-color: #0D5D9C;
     display: flex;
@@ -41,10 +49,6 @@ body {
     color: #ffffff; /* Màu trắng cho icon */
 }
 
-
-
-
-
 /*bottom navbar*/
 .bottom-navbar {
     background-color: #407EC9;
@@ -53,17 +57,26 @@ body {
     height: 50px;
     font-weight: bold;
     display: flex; /*điều chỉnh chữ nằm giữa thanh điều hướng*/
-    align-items: center;
+    align-items: center!important;
 }
 .bottom-navbar .nav-link {
     font-size: 16px;
 }
 /*khi trỏ chuột vào menu, background chuyển thành trắng và chữ chuyển thành xanh*/
-.navbar-nav li:hover {
-    background-color: #ffffff;
-}
+
 .navbar-nav li:hover a {
+    background-color: whitesmoke;
     color: #407EC9;
+    cursor: pointer;
+}
+/* .nav-item {
+    position: relative;
+} */
+.dropdown-menu{
+    position: absolute;
+    z-index: 1;
+    background: whitesmoke;
+    display: none;
 }
 .navbar-nav .dropdown:hover .dropdown-menu {
     display: block;
@@ -80,5 +93,56 @@ body {
     color:#ffffff;
 }
 
+/* a{
+    color: #e72929;
+}
 
+a:hover {
+    background: #e72929;
+    color: white;
+    cursor: pointer;
+}
 
+.container{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+a.logo{
+    font-weight: bold;
+    padding: 1rem;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+ul a{
+    padding: 1rem;
+    display: inline-block;
+}
+a span{
+    background: #ff4d4d;
+    color: #fff;
+    padding: 0.1rem 0.45rem;
+    border-radius: 100rem;
+    font-size: 0.9rem;
+}
+
+.menu-container{
+    position: relative;
+}
+.menu{
+    position: absolute;
+    z-index: 1;
+    background: whitesmoke;
+    display: none;
+}
+.menu-container:hover .menu{
+    display: block;
+}
+.menu a{
+    width: 100%;
+    min-width: 8rem;
+} */

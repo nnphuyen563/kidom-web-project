@@ -28,7 +28,7 @@ body {
     display: flex; /*tạo 1 container flex, căn chỉnh theo chiều ngang*/
     align-items: center; /* Canh giữa theo chiều dọc */
   }
-  
+
 .checkbox-container input[type="checkbox"] {
     margin-right: 10px; /* Khoảng cách giữa checkbox và label */
     transform: scale(1.5); /* Thay đổi kích thước của checkbox */
@@ -46,8 +46,8 @@ body {
     position: relative;
     max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
   }
-  
-  .overlay-text {
+
+.overlay-text {
     position: absolute;
     top: 95%; /*Căn trên của hình ảnh*/
     left: 35%;
@@ -60,12 +60,10 @@ body {
     justify-content: center; /* Căn giữa theo chiều ngang */
     align-items:first baseline; /* Căn giữa theo chiều dọc */
 }
-  
+
 .img-container, .right-column {
     flex: 1; /* Phần tử chiếm toàn bộ khoảng trống còn lại */
 }
 .form-control {
     border-radius: 15px !important;
 }
-
-
