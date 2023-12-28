@@ -5,6 +5,7 @@ import { ProductDetailComponent } from './components/pages/product-detail/produc
 import { LoginComponent } from './components/pages/login/login.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { ForgotPassComponent } from './components/pages/forgot-pass/forgot-pass.component';
+import { CategoryComponent } from './components/partials/category/category.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent},
   {path: 'forget-pass', component:ForgotPassComponent},
+  {path: 'catagory/:catagoryName', component: CategoryComponent},
   {path: 'search/:searchTerm', component:HomeComponent}
 ];
 

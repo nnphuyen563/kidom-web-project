@@ -17,33 +17,24 @@
         </div>
 
     <!-- right-box -->
-        <div class="col-md-6 right-box">
-            <div class="row align-items-center">
-                <div class="header-text mb-4">
-                    <p> Xin chào phụ huynh của bé, 
-                        <b> Kidom </b> rất vui mừng khi gặp lại bạn!
-                    </p>
-                </div>
-                <!-- Nhập Email -->
-                <div class="input-group mb-3" id="email">
-                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email">
-                </div>
-                <!-- Nhập mật khẩu -->
-                <div class="input-group mb-1">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Mật khẩu">
-                </div>
-                <!-- Lưu đăng nhập và quên mật khẩu -->
-                <div class="input-group mb-3 d-flex justify-content-between" id="luudangnhap">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="form-check">
-                        <label for="formCheck" class="form-check-label text-secondary"><small>Lưu đăng nhập</small></label>
-                    </div>
-                    <div class="forgot" >
-                        <small><a routerLink="/forget-pass"> Quên mật khẩu</a></small>
-                    </div>
-                </div>
-                <!-- Button -->
-
+            <div class="col-md-6 right-box d-flex">
+                <div class="row align-items-center">
+                    <app-title title="Đăng nhậpp"></app-title>
+                    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                        <div class="header-text mb-1">
+                            <p> Xin chào phụ huynh của bé, 
+                                Kidom rất vui mừng khi gặp lại bạn!
+                            </p>
+                        </div>
+                        <!-- Nhập Email -->
+                        <div class="input-container">
+                            <label for="email">Tài khoản</label>
+                            <div class="input-group mb-1" >
+                                <input id="email" type="email" style="display: block;" class="form-control form-control-lg bg-light fs-6" placeholder="Email" formControlName="email">
+                            </div>
+                            <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+                                <div class="errorlogin" *ngIf="fc['email'].errors?.['required']">Không được để trống</div>
+                                <div class="errorlogin" *ngIf="fc['email'].errors?.['email']">Email không đúng định dạng</div>
                 <!-- Đây là button chưa gắn link -->
                 <!-- <div class="input-group mb-3" id="btnlogin">
                     <button class="btn btn-lg btn-success w-100 fs-6">Đăng nhập</button>
