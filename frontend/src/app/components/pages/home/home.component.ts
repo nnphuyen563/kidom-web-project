@@ -25,10 +25,13 @@ export class HomeComponent {
   constructor(
     private bannerServices: BannerService,
     private productServices: ProductService,
-    private activatedRoute: ActivatedRoute  // Sửa tên thành activatedRoute
+    private activatedRoute: ActivatedRoute,
+    private catagoryServices: CatagoryService
+      // Sửa tên thành activatedRoute
   ) {
     this.banners = bannerServices.getAll();
     this.products = productServices.getThumbnail();
+    this.catagorys= catagoryServices.getAll();
 
     this.activatedRoute.params.subscribe((params) => {
       if (params.searchTerm) {
