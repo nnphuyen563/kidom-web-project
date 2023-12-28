@@ -1,10 +1,8 @@
 import { Banner } from "./app/shared/models/Banner";
 import { Product } from "./app/shared/models/Product";
-import { Catagory } from "./app/shared/models/Catagory";
 
 const bannerPath = 'assets/img/banner/';
 const productPath = 'assets/img/product/'
-const catagoryPath ='assets/img/catagory/'
 
 export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner1.jpeg'},
@@ -13,33 +11,6 @@ export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner4.jpeg'},
     {imageUrl: bannerPath + 'banner5.jpeg'},
     {imageUrl: bannerPath + 'banner6.jpeg'},
-]
-
-export const CATAGORY: Catagory[] = [
-    {
-        imageUrl: catagoryPath + 'hoatrang.png',
-        name: "Hoá trang",
-    },
-    {
-        imageUrl: catagoryPath + 'Laprap.png',
-        name: "Lắp ráp"
-    },
-    {
-        imageUrl: catagoryPath + 'hoatrang.png',
-        name: "Hoá trang",
-    },
-    {
-        imageUrl: catagoryPath + 'Laprap.png',
-        name: "Lắp ráp"
-    },
-    {
-        imageUrl: catagoryPath + 'hoatrang.png',
-        name: "Hoá trang",
-    },
-    {
-        imageUrl: catagoryPath + 'Laprap.png',
-        name: "Lắp ráp"
-    }
 ]
 
 export const PRODUCTS: Product[] = [
