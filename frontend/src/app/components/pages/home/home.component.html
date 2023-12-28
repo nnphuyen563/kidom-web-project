@@ -2,7 +2,7 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="assets/img/logo/1460x400.svg" class="d-block w-100" alt="Banner 1">
+            <img src="assets/img/banner/Bannerhome.png" class="d-block w-100" alt="Banner 1">
             </div>
             <div class="carousel-item">
             <img src="assets/img/logo/1460x400.svg" class="d-block w-100" alt="Banner 2">
@@ -19,8 +19,9 @@
         </button>
     </div>
     <!-- hết banner -->
-    
-    <div class="container">
+
+    <!-- Catagory cũ -->
+    <!-- <div class="container">
         <div class="row p-3">
     
             <div class="col-4 col-lg-2 text-center">
@@ -76,11 +77,25 @@
                     </div>
                 </a>
             </div>
-    
-            
         </div>
     
+    </div> -->
+    <!-- Hết catagory -->
+    <!-- new -->
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-4 col-lg-2 text-center" *ngFor="let catagory of catagorys">
+                <a routerLink="catagory/{{catagory.name}}" class="text-decoration-none">
+                    <img [src]="catagory.imageUrl" alt="" class="cat">
+                    <div class="card-title text-black">
+                        <h5 class="card-title text-center mt-2">{{catagory.name}}</h5>
+                    </div>
+                </a>
+            </div>
+
+        </div>
     </div>
+    <!-- het new -->
     <!-- than trang -->
     <div class="container-fluid body p-5">
         <!-- San pham moi -->
@@ -119,7 +134,7 @@
                 <img src="../assets/img/logo/tieude.png" alt="" class="thanhtieude m-1">
             </div>
             <div class="position-absolute top-50 start-50 translate-middle text-black">
-                <h3 class="texttieude">Thông tin mới nhấ</h3>
+                <h3 class="texttieude">Thông tin mới nhất</h3>
             </div>
         </div>
         <div class="row mt-3">

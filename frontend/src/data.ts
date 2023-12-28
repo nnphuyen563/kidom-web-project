@@ -15,9 +15,9 @@ export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner6.jpeg'},
 ]
 
-export const CATAGORY: Catagory[] = [
+export const CATAGORYS: Catagory[] = [
     {
-        imageUrl: catagoryPath + 'hoatrang.png',
+        imageUrl: catagoryPath + 'Hoatrang.png',
         name: "Hoá trang",
     },
     {
@@ -25,7 +25,7 @@ export const CATAGORY: Catagory[] = [
         name: "Lắp ráp"
     },
     {
-        imageUrl: catagoryPath + 'hoatrang.png',
+        imageUrl: catagoryPath + 'Hoatrang.png',
         name: "Hoá trang",
     },
     {
@@ -33,7 +33,7 @@ export const CATAGORY: Catagory[] = [
         name: "Lắp ráp"
     },
     {
-        imageUrl: catagoryPath + 'hoatrang.png',
+        imageUrl: catagoryPath + 'Hoatrang.png',
         name: "Hoá trang",
     },
     {
