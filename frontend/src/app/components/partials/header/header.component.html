@@ -1,18 +1,18 @@
 <header>
     <div class="navbar pb-1"> 
         <div class="container">
-            <div class="top-navbar row">
+            <div class="top-navbar row pt-4">
                 <div class="col-md-2">
                   
                     <button class="navbar-toggler shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a routerLink="/" class="logo d-block text-center pt-3">
+                    <a routerLink="/" class="logo d-block text-center">
                         <img src="assets/img/logo/logo-red.png" class="img-fluid" alt="logo">
                     </a>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-5 pt-4">
+                <div class="col-md-5 my-auto">
                     <form role="search">
                         <div class="input-group">
                             <app-search></app-search>
@@ -39,7 +39,6 @@
                             <a routerLink="/login" class="nav-link" id="navbar" role="button">
                                 <i class="fa-regular fa-circle-user"></i> Đăng nhập /
                             </a>
-                            
                         </li>
                         <li class="nav-item">
                             <a routerLink="/signup" class="nav-link" id="navbar" role="button">
@@ -51,9 +50,6 @@
             </div>
         </div>
     </div>
-
-    
-
 
     <nav class="bottom-navbar navbar-expand-lg fixed-top" style="z-index: 999;">
         <div class="container">
@@ -67,9 +63,11 @@
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-9">
                     <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
                         <li class="nav-item mx-3">
-                            <a class="nav-link" routerLink="/">Design by you</a>
+                            <a class="nav-link" routerLink="/design-by-you">Design by you</a>
                         </li>
-                        
+                        <li class="nav-item mx-3">
+                            <a routerLink="/" class="nav-link active" aria-current="page">Trang chủ</a>
+                        </li>
                         <li class="nav-item dropdown mx-3">
                             <a routerLink="/" class="nav-link dropdown-toggle">Sản phẩm</a>
                             <div class="dropdown-menu dropdown-menu-dark">
@@ -105,7 +103,6 @@
             </div>
         </div>     
     </nav>
-<!-- <app-menu></app-menu> -->
 </header>
 
 <!-- <header>
