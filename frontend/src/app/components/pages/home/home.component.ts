@@ -26,7 +26,7 @@ export class HomeComponent {
       if (params.searchTerm) {
         this.products = this.productServices.getAllProductsBySearchTerm(params.searchTerm);
       } else {
-        this.products = productServices.getAll();
+        this.products = productServices.getThumbnail();
       }
     });
   }
