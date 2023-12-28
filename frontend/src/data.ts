@@ -3,8 +3,8 @@ import { Product } from "./app/shared/models/Product";
 import { Catagory } from "./app/shared/models/Catagory";
 
 const bannerPath = 'assets/img/banner/';
-const productPath = 'assets/img/product/';
-const catagoryPath ='assets/img/catagory/';
+const productPath = 'assets/img/product/'
+const catagoryPath ='assets/img/catagory/'
 
 export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner1.jpeg'},
@@ -45,8 +45,8 @@ export const CATAGORYS: Catagory[] = [
 export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1_thumb.png',
-        name: "bút màu",
-        category: 'Toy',
+        name: "Toy's name",
+        category: 'Bup be',
         price: 199.999,
         id: 1,
         description: 'Description of product 1',
@@ -56,10 +56,10 @@ export const PRODUCTS: Product[] = [
     },
     {
         imageUrl: productPath + '1b.jpg',
-        name: "gấu bông",
-        category: 'Toy',
+        name: "Toy's name",
+        category: 'Con bo',
         price: 199.999,
-        id: 1,
+        id: 2,
         description: 'Description of product 2',
         star: 3.5,
         stock: 50,
@@ -68,9 +68,9 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1c.png',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Xe do choi',
         price: 199.999,
-        id: 1,
+        id: 3,
         description: 'Description of product 3',
         star: 4.2,
         stock: 50,
@@ -81,7 +81,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 1,
+        id: 4,
         description: 'Description of product 4',
         star: 4.8,
         stock: 50,
@@ -93,7 +93,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 1,
+        id: 5,
         description: 'Description of product 5',
         star: 4.1,
         stock: 50,
@@ -113,7 +113,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '2_thumb.png',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Con bo',
         price: 199.999,
         id: 2,
         description: 'Description of product 2a',
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 12,
+        id: 9,
         description: 'Description of product 12a',
         star: 3.9,
         stock: 50,
@@ -203,7 +203,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 19,
+        id: 10,
         description: 'Description of product 19a',
         star: 4.8,
         stock: 50,
@@ -214,7 +214,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 19,
+        id: 10,
         description: 'Description of product 19b',
         star: 4.4,
         stock: 50,
@@ -225,7 +225,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 19,
+        id: 10,
         description: 'Description of product 19c',
         star: 4.6,
         stock: 50,
@@ -236,7 +236,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 20,
+        id: 11,
         description: 'Description of product 20a',
         star: 4.2,
         stock: 50,
@@ -247,7 +247,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 20,
+        id: 11,
         description: 'Description of product 20b',
         star: 4.7,
         stock: 50,
@@ -258,7 +258,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 20,
+        id: 11,
         description: 'Description of product 20c',
         star: 4.1,
         stock: 50,

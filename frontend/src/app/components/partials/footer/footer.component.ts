@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  // Import ảnh
-  imageUrl: string = '/assets/img/footer/Footer.svg';
+
 }
