@@ -57,3 +57,7 @@ transition: transform 0.3s ease-in-out;
 .blog {
     width: 100%;
 }
+.ml {
+    margin-left: auto;
+    margin-right: 10px;
+}

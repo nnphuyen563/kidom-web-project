@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit{
   loginForm!:FormGroup;
   isSubmitted = false;
   Router: any;
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private router: Router ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -29,6 +29,6 @@ export class LoginComponent implements OnInit{
     if (this.loginForm.invalid) return;
     
     alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`)
-    this.Router.navigate(['']);
+    this.router.navigate(['']);
   }
 }

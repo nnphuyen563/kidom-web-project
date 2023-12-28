@@ -20,69 +20,7 @@
         </button>
     </div>
     <!-- hết banner -->
-
-    <!-- Catagory cũ -->
-    <!-- <div class="container">
-        <div class="row p-3">
-    
-            <div class="col-4 col-lg-2 text-center">
-                <a href="#" class="text-decoration-none">
-                    <img src="assets/img/logo/150.svg" alt="" class="cat">
-                    <div class="card-title text-black">
-                        Gau bong
-                    </div>
-                </a>
-            </div>
-    
-            <div class="col-4 col-lg-2 text-center">
-                <a href="#" class="text-decoration-none">
-                    <img src="assets/img/logo/150.svg" alt="" class="cat">
-                    <div class="card-title text-black">
-                        Gau bong
-                    </div>
-                </a>
-            </div>
-    
-            <div class="col-4 col-lg-2 text-center">
-                <a href="#" class="text-decoration-none">
-                    <img src="assets/img/logo/150.svg" alt="" class="cat">
-                    <div class="card-title text-black">
-                        Gau bong
-                    </div>
-                </a>
-            </div>
-    
-            <div class="col-4 col-lg-2 text-center">
-                <a href="#" class="text-decoration-none">
-                    <img src="assets/img/logo/150.svg" alt="" class="cat">
-                    <div class="card-title text-black">
-                        Gau bong
-                    </div>
-                </a>
-            </div>
-    
-            <div class="col-4 col-lg-2 text-center">
-                <a href="#" class="text-decoration-none">
-                    <img src="assets/img/logo/150.svg" alt="" class="cat">
-                    <div class="card-title text-black">
-                        Gau bong
-                    </div>
-                </a>
-            </div>
-    
-            <div class="col-4 col-lg-2 text-center">
-                <a href="#" class="text-decoration-none">
-                    <img src="assets/img/logo/150.svg" alt="" class="cat">
-                    <div class="card-title text-black">
-                        Gau bong
-                    </div>
-                </a>
-            </div>
-        </div>
-    
-    </div> -->
-    <!-- Hết catagory -->
-    <!-- new -->
+    <!-- catagory -->
     <div class="container">
         <div class="row p-3">
             <div class="col-4 col-lg-2 text-center" *ngFor="let catagory of catagorys">
@@ -103,7 +41,9 @@
         <div class="container bg-light p-3 cover">
             <div class="position-relative">
                 <div class="tieude text-center">
-                    <img src="assets/img/logo/tieude.png" alt="" class="thanhtieude m-1">
+                    <a routerLink="catagory/{CatagoryNew}">
+                        <img src="assets/img/logo/tieude.png" alt="" class="thanhtieude m-1">
+                    </a>
                 </div>
                 <div class="position-absolute top-50 start-50 translate-middle text-black">
                     <h3 class="texttieude">Sản phẩm mới</h3>
@@ -116,11 +56,16 @@
                         <div class="card mb-3" >
                             <img [src]="product.imageUrl" class="card-img" alt="" id="hinh{{i + 1}}">
                             <div class="p-2">
-                                <span class="text-black-50 text-center">{{product.category}}</span>
+                                <h6 class="text-black-50 p-2">{{product.category}}</h6>
                                 <h5 class="card-title text-center mt-2">{{product.name}}</h5>
                                 <h6 class="card-text text-center price mb-1">{{product.price}} VND</h6>
-                                <div class="stars">
-                                    <app-star-rating [stars]="product.star" />
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="stars mr-auto align-items-center">
+                                        <app-star-rating [stars]="product.star" />
+                                    </div>
+                                    <div class="mt-2 ml">
+                                        <span class="card-title"> Có sẵn: {{product.stock}}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

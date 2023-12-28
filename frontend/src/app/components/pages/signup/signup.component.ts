@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit{
   SignupForm!:FormGroup;
   isSubmitted = false;
-  constructor(private formBuilder:FormBuilder) { }
+  Router: any;
+  constructor(private formBuilder:FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.SignupForm = this.formBuilder.group({
@@ -27,9 +29,12 @@ export class SignupComponent implements OnInit{
 
   submit(){
     this.isSubmitted = true;
+    
     if (this.SignupForm.invalid) return;
-    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`);
-    this.SignupForm.reset();
+    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}
+    Mời bạn đăng nhập lại`);
+    
+    this.router.navigate(['/login']);
   }
 }
 

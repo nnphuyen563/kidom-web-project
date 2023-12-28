@@ -16,7 +16,7 @@
     <!-- right-box -->
             <div class="col-md-6 right-box d-flex">
                 <div class="row align-items-center">
-                    <app-title title="Đăng nhậpp"></app-title>
+                    <app-title title="Đăng nhập"></app-title>
                     <form [formGroup]="loginForm" (ngSubmit)="submit()">
                         <div class="header-text mb-1">
                             <p> Xin chào phụ huynh của bé, 
@@ -63,7 +63,7 @@
                     
 
                         <div class="input-group mb-3" id="btnsignup">
-                                <button class="btn btn-lg btn-danger w-100 fs-6">Tạo tài khoản mới</button>
+                                <button class="btn btn-lg btn-danger w-100 fs-6" routerLink="/signup">Tạo tài khoản mới</button>
                         </div>
 
                     </form>
