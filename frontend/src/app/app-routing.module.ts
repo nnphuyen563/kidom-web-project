@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent},
   {path: 'forget-pass', component:ForgotPassComponent},
-  {path: 'catagory/:catagoryName', component: CategoryComponent}
+  {path: 'catagory/:catagoryName', component: CategoryComponent},
+  {path: 'search/:searchTerm', component:HomeComponent}
 ];
 
 @NgModule({

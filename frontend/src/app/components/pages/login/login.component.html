@@ -9,9 +9,12 @@
     <!-- left-box -->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-color: white;">
                 <div class="featured-image mb-3">
-                    <img src="../assets/img/banner/loginbanner.png" class="img-fluid" style="width: 100%; border-radius: 5%;">
+                    <img src="/assets/img/banner/loginbanner.png" class="img-fluid" style="width: 100%; border-radius: 5%;">
                 </div>
             </div>
+            <p class="text-white fs-2" style="font-weight: 600px;">LẠI LÀ DGHOUSE</p>
+            <small class="text-white text-wrap text-center" style="width: 17rem;">Chỗ này để ảnh đại, mình sẽ có ảnh để chạy chiến dịch noel hay gì đó ở đây</small>
+        </div>
 
     <!-- right-box -->
             <div class="col-md-6 right-box d-flex">
@@ -32,44 +35,28 @@
                             <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
                                 <div class="errorlogin" *ngIf="fc['email'].errors?.['required']">Không được để trống</div>
                                 <div class="errorlogin" *ngIf="fc['email'].errors?.['email']">Email không đúng định dạng</div>
+                <!-- Đây là button chưa gắn link -->
+                <!-- <div class="input-group mb-3" id="btnlogin">
+                    <button class="btn btn-lg btn-success w-100 fs-6">Đăng nhập</button>
+                </div>
+                 -->
 
-                            </div>
-                        </div>
-                        <!-- Nhập mật khẩu -->
-                        <div class="input-container">
-                            <label for="password">Mật khẩu</label>
-                            <div class="input-group mb-1">
-                                <input id="password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Mật khẩu" formControlName="password">
-                            </div>
-                            <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
-                                <div class="errorlogin" *ngIf="fc['password'].errors?.['required']">Không được để trống</div>
+                 <!-- Button gắn link -->
+                <div class="input-group mb-2" id="btnlogin">
+                    <a href="#" class="btn btn-lg btn-success w-100 fs-6">Đăng nhập</a>
+                </div>
+               
 
-                            </div>
-                        </div>
-                        <!-- Lưu đăng nhập và quên mật khẩu -->
-                        <div class="input-group mb-3 d-flex justify-content-between" id="luudangnhap">
-                            <div class="form-check">
-                                <label for="form-Check" class="form-check-label text-secondary"><small>Lưu đăng nhập</small></label>
-                                <input type="checkbox" class="form-check-input" id="form-Check">
-                            </div>
-                            <div class="forgot" >
-                                <small><a routerLink="/forget-pass"> Quên mật khẩu</a></small>
-                            </div>
-                        </div>
-                        <!-- Button -->
-                        <div class="input-group mb-3" id="btnlogin">
-                            <button class="btn btn-lg btn-success w-100 fs-6" type="submit" > Đăng nhập</button>
-                        </div>
-                    
 
-                        <div class="input-group mb-3" id="btnsignup">
-                                <button class="btn btn-lg btn-danger w-100 fs-6">Tạo tài khoản mới</button>
-                        </div>
+                <!-- <div class="input-group mb-3" id="btnsignup">
+                        <button class="btn btn-lg btn-danger w-100 fs-6">Tạo tài khoản mới</button>
+                </div> -->
 
-                    </form>
+
+                <div class="input-group mb-3" id="btnsignup">
+                    <a routerLink="/signup" class="btn btn-lg btn-danger w-100 fs-6">Tạo tài khoản mới</a>
                 </div>
             </div>
         </div>
+        </div>
     </div>
-</div>
-</body>
