@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-star-rating',
@@ -23,7 +23,14 @@ export class StarRatingComponent {
   }
 
   getStarImage(current: number): string {
-    
+    const previousHalf = current - 0.5;
+    const imageName = 
+    this.stars >= current
+    ? 'star-full'
+    : this.stars >= previousHalf 
+    ? 'star-half'
+    : 'star-empty';
+    return `/assets/star/${imageName}.png`;
   }
 
 }

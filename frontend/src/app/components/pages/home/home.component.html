@@ -103,7 +103,9 @@
                                 <span class="text-black-50 text-center">{{product.category}}</span>
                                 <h5 class="card-title text-center mt-2">{{product.name}}</h5>
                                 <h6 class="card-text text-center price mb-1">{{product.price}} VND</h6>
-                                <h6 class="card-text text-center price mb-1">{{product.star}}</h6>
+                                <div class="stars">
+                                    <app-star-rating [stars]="product.star" />
+                                </div>
                             </div>
                         </div>
                     </a>
