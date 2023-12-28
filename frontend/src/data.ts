@@ -16,7 +16,7 @@ export const BANNERS: Banner[] = [
 export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1_thumb.png',
-        name: "Toy's name",
+        name: "bút màu",
         category: 'Toy',
         price: 199.999,
         id: 1,
@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         imageUrl: productPath + '1b.jpg',
-        name: "Toy's name",
+        name: "gấu bông",
         category: 'Toy',
         price: 199.999,
         id: 2,
