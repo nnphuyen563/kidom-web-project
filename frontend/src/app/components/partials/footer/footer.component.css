@@ -47,6 +47,15 @@ body {
     max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
   }
 
+
+/* .above-text {
+    position: absolute;
+    top: 95%; 
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: white; 
+} */
+
 .overlay-text {
     position: absolute;
     top: 95%; /*Căn trên của hình ảnh*/
