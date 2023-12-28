@@ -11,7 +11,8 @@ const routes: Routes = [
   {path: 'productDetail/:productName', component:ProductDetailComponent},
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent},
-  {path: 'forget-pass', component:ForgotPassComponent}
+  {path: 'forget-pass', component:ForgotPassComponent},
+  {path: 'search/:searchTerm', component:HomeComponent}
 ];
 
 @NgModule({

@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Product } from '../../../shared/models/Product';
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  selector: 'header-footer',
+  templateUrl: './footer.component.html',
+  styleUrl: './footer.component.css'
 })
 export class HeaderComponent {
+  
+  constructor() { }
+   ngOnInit(): void {
 
+   }
 }
