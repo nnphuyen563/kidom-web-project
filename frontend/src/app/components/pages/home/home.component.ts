@@ -15,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent {
   banners: Banner[] = [];
   products: Product[] = [];
-  catagorys: Catagory[] =[]
+  catagorys: Catagory[] =[];
 
   constructor(private bannerServices: BannerService, private productServices: ProductService, private catagoryServices: CatagoryService) { 
     this.banners = bannerServices.getAll();
