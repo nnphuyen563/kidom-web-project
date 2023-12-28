@@ -22,10 +22,9 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
-import { TitleComponent } from './components/partials/title/title.component';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { TitleComponent } from './components/partials/title/title.component';
 import { FormsModule } from '@angular/forms';
+import { TitleComponent } from './components/partials/title/title.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,8 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     DesignByYouComponent,
     FaqComponent,
-    PolicyComponent
+    PolicyComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

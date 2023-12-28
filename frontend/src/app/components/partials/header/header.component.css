@@ -1,17 +1,10 @@
-
-body {
-    width: 100%;
-    text-decoration: none !important;
-    font-family: myFontSub !important;
-}
-/*top navbar*/
 header {
     position: relative;
     padding: 0;
     font-family: myFontSub;
+
 }
 /*Top navbar*/
-
 .navbar {
     background-color: #0D5D9C;
     display: flex;
@@ -23,7 +16,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 /* Chỉnh kích thước của icon lớn hơn chữ */
@@ -37,6 +29,7 @@ header {
 .nav-outer {
     margin-left: auto;
 }
+
 .col-md-4 .nav-link i {
     color: #ffffff; /* Màu trắng cho icon */  
 }
@@ -54,19 +47,6 @@ header {
 .dropdown-menu a{
     width: 100%;
     min-width: 8rem;
-/* Thêm border-radius cho ô input trong form */
-.form-control {
-    border-radius: 20px;
-}
-.input-group button { /*border button tìm kiếm*/
-    border-radius: 20px;
-    background-color: red;
-    color: white; /* Chỉnh màu chữ thành màu trắng */
-    border: none; /* Loại bỏ đường viền */
-}
-/* Chỉnh màu của icon search thành màu trắng */
-.col-md-5 .input-group .btn i {
-    color: white;
 }
 
 /*bottom navbar*/
@@ -106,67 +86,6 @@ header {
 .navbar-nav, .navbar-nav a { 
     margin: auto;
     display: flex;
-    text-align: right; /*căn phải dropdown*/
-}
-
-.navbar-nav, .navbar-nav a { /*chỉnh menu vào giữa*/
-    margin: auto;
-    display: flex;
-    justify-content: center;
     align-items: center;
     color:#ffffff;
 }
-
-/* a{
-    color: #e72929;
-}
-
-a:hover {
-    background: #e72929;
-    color: white;
-    cursor: pointer;
-}
-
-.container{
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-}
-a.logo{
-    font-weight: bold;
-    padding: 1rem;
-}
-
-ul{
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-}
-ul a{
-    padding: 1rem;
-    display: inline-block;
-}
-a span{
-    background: #ff4d4d;
-    color: #fff;
-    padding: 0.1rem 0.45rem;
-    border-radius: 100rem;
-    font-size: 0.9rem;
-}
-
-.menu-container{
-    position: relative;
-}
-.menu{
-    position: absolute;
-    z-index: 1;
-    background: whitesmoke;
-    display: none;
-}
-.menu-container:hover .menu{
-    display: block;
-}
-.menu a{
-    width: 100%;
-    min-width: 8rem;
-} */

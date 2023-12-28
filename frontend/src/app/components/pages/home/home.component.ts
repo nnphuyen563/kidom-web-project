@@ -17,10 +17,10 @@ export class HomeComponent {
   products: Product[] = [];
   catagorys: Catagory[] =[];
 
-  constructor(private bannerServices: BannerService, private productServices: ProductService, private catagoryServices: CatagoryService) { 
-    this.banners = bannerServices.getAll();
-    this.products = productServices.getThumbnail();
-    this.catagorys= catagoryServices.getAll()
+  // constructor(private bannerServices: BannerService, private productServices: ProductService, private catagoryServices: CatagoryService) { 
+  //   this.banners = bannerServices.getAll();
+  //   this.products = productServices.getThumbnail();
+  //   this.catagorys= catagoryServices.getAll()
 
   constructor(
     private bannerServices: BannerService,
