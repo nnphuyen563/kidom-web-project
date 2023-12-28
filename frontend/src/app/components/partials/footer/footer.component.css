@@ -51,6 +51,7 @@ body {
     position: absolute;
     top: 95%; /*Căn trên của hình ảnh*/
     left: 35%;
+
     transform: translate(-50%, -50%);
     color: white; /* Màu chữ */
 }
@@ -66,4 +67,3 @@ body {
 .form-control {
     border-radius: 15px !important;
 }
-
