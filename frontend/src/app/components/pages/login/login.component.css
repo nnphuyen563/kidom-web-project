@@ -9,9 +9,9 @@ body {
     font-size: 20px;
     text-align:left;
 }
-#email {
+/* #email {
     margin-top: -20px;
-}
+} */
 .background {
     background-image: url(/assets/img/login/background.jpeg);
     background-size: cover;
@@ -21,9 +21,11 @@ body {
     margin-top: 10px;
 }
 #btnlogin button{
-    margin-top: -30px;
     background-color: #086A39;
 }
-#btnsignin a button{
+#btnsignup button{
     background-color: #F52A41;
+}
+.errorlogin {
+    color: #F52A41;
 }

@@ -17,7 +17,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1_thumb.png',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Bup be',
         price: 199.999,
         id: 1,
         description: 'Description of product 1',
@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1b.jpg',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Con bo',
         price: 199.999,
         id: 2,
         description: 'Description of product 2',
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1c.png',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Xe do choi',
         price: 199.999,
         id: 3,
         description: 'Description of product 3',
@@ -84,7 +84,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '2_thumb.png',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Con bo',
         price: 199.999,
         id: 2,
         description: 'Description of product 2a',
