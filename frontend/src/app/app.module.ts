@@ -22,9 +22,13 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
+<<<<<<< Updated upstream
 import { ReactiveFormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
 
+=======
+import { FormsModule } from '@angular/forms';
+>>>>>>> Stashed changes
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +56,11 @@ import { TitleComponent } from './components/partials/title/title.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< Updated upstream
     ReactiveFormsModule
+=======
+    FormsModule
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
