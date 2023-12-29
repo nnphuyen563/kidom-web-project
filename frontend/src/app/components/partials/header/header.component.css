@@ -88,6 +88,8 @@ header {
     display: flex;
     align-items: center;
     color:#ffffff;
+}
+
 .header {
     background-color: #0D5D9C;
 }
