@@ -57,3 +57,24 @@ transition: transform 0.3s ease-in-out;
 .blog {
     width: 100%;
 }
+.ml {
+    margin-left: auto;
+    margin-right: 10px;
+}
+.cat:hover + .card-title .categoryname {
+    color: red; /* Màu đỏ khi hover */
+}
+.deliverytext {
+    color: #0D5D9C;
+    text-align: center;
+    font-weight:bolder ;
+    font-size: 14px;
+    padding-top: 15px;
+}
+.deliveryimg {
+    width: 10%;
+    margin-right: 10px; /* Khoảng cách giữa hình ảnh và đoạn văn */
+}
+.col-3 {
+    padding-left: 20px
+}
