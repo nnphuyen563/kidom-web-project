@@ -25,6 +25,13 @@ import { PolicyComponent } from './components/pages/policy/policy.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
+import { BodyComponent } from './components/admin/body/body.component';
+import { SidenavComponent } from './components/admin/sidenav/sidenav.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { ProductsComponent } from './components/admin/products/products.component';
+import { CoupensComponent } from './components/admin/coupens/coupens.component';
+import { IndexComponent } from './components/partials/index/index.component';
+import { UsersComponent } from './components/admin/users/users.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +55,14 @@ import { TitleComponent } from './components/partials/title/title.component';
     DesignByYouComponent,
     FaqComponent,
     PolicyComponent,
-    TitleComponent
+    TitleComponent,
+    BodyComponent,
+    SidenavComponent,
+    DashboardComponent,
+    ProductsComponent,
+    CoupensComponent,
+    IndexComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
