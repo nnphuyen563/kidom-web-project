@@ -6,6 +6,9 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { ForgotPassComponent } from './components/pages/forgot-pass/forgot-pass.component';
 import { CategoryComponent } from './components/partials/category/category.component';
+import { FaqComponent } from './components/pages/faq/faq.component';
+import { PolicyComponent } from './components/pages/policy/policy.component';
+
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -14,7 +17,9 @@ const routes: Routes = [
   {path: 'signup', component:SignupComponent},
   {path: 'forget-pass', component:ForgotPassComponent},
   {path: 'catagory/:catagoryName', component: CategoryComponent},
-  {path: 'search/:searchTerm', component:HomeComponent}
+  {path: 'search/:searchTerm', component:HomeComponent},
+  {path: 'faq', component:FaqComponent},
+  {path: 'policy', component:PolicyComponent}
 ];
 
 @NgModule({
