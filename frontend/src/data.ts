@@ -45,9 +45,9 @@ export const CATAGORYS: Catagory[] = [
 export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1_thumb.png',
-        name: "Toy's name",
-        category: 'Bup be',
-        price: 199.999,
+        name: "Hộp màu",
+        category: 'Mỹ thuật',
+        price: 199.000,
         id: 1,
         description: 'Description of product 1',
         star: 4,
