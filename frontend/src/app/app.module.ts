@@ -48,13 +48,12 @@ import { TitleComponent } from './components/partials/title/title.component';
     DesignByYouComponent,
     FaqComponent,
     PolicyComponent,
-    TitleComponent
+    TitleComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

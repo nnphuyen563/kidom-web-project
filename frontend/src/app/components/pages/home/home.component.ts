@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrl: './home.component.css'
 })
 export class HomeComponent {
   banners: Banner[] = [];
@@ -42,4 +42,3 @@ export class HomeComponent {
     });
   }
 }
-
