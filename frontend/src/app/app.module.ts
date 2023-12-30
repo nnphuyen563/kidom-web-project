@@ -22,11 +22,9 @@ import { SearchComponent } from './components/partials/search/search.component';
 import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
-
-import { ReactiveFormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+//import { TitleComponent } from './components/partials/title/title.component';
 import { FormsModule } from '@angular/forms';
 // import { TabViewModule } from 'primeng/tabview';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -55,14 +53,13 @@ import { GalleriaModule } from 'primeng/galleria';
     SearchComponent,
     DesignByYouComponent,
     FaqComponent,
-    PolicyComponent,
-    TitleComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     ReactiveFormsModule,
+<<<<<<< HEAD
 
     FormsModule,
     // TabViewModule,
@@ -70,6 +67,9 @@ import { GalleriaModule } from 'primeng/galleria';
     BrowserAnimationsModule, 
     MatIconModule,
     GalleriaModule,
+=======
+    FormsModule
+>>>>>>> 0db53822d9b72b2f594ce3986e6127398b27f114
   ],
   providers: [],
   bootstrap: [AppComponent]

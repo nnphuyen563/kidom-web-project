@@ -1,3 +1,4 @@
+
 /* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: myFontMain;
@@ -15,5 +16,8 @@
     --button-color-green: #328321;
     --button-color-red: #e82416;
 }
+<<<<<<< HEAD
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+=======
+>>>>>>> 0db53822d9b72b2f594ce3986e6127398b27f114

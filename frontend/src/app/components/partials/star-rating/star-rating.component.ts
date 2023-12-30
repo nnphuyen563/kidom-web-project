@@ -33,4 +33,8 @@ export class StarRatingComponent {
     return `/assets/star/${imageName}.png`;
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0db53822d9b72b2f594ce3986e6127398b27f114
