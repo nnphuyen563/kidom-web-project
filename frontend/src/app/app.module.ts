@@ -23,6 +23,7 @@ import { DesignByYouComponent } from './components/pages/design-by-you/design-by
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
 
 @NgModule({

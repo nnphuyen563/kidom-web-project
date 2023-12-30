@@ -16,8 +16,8 @@ const routes: Routes = [
   {path: 'forget-pass', component:ForgotPassComponent},
   {path: 'catagory/:catagoryName', component: CategoryComponent},
   {path: 'aboutus', component: AboutUsComponent}
+  {path: 'search/:searchTerm', component:HomeComponent}
 
-  
 ];
 
 @NgModule({
