@@ -1,3 +1,4 @@
+
 <body>
     <div class="bg-white"> 
         <div class="container py-4">
@@ -6,7 +7,7 @@
                 <div class="mb-0">
                     <a href="" class="text-black text-decoration-none">Trang chủ</a>
                     <span class="text-black mx-2"> > </span> <!--margin left and right = 2-->
-                    <a href="" class="text-black text-decoration-none">Thủ công - Mỹ thuật</a>
+                    <a href="" class="text-black text-decoration-none">{{thumbnail.category}}</a>
                     <span class="text-black mx-2"> > </span>
                     <a href="" class="text-black text-decoration-none">{{thumbnail.name}}</a>
                 </div>
@@ -17,43 +18,49 @@
     <section class="py-2"> <!--padding top and bottom--> 
         <div class="container">
             <div class="row gx-5"> <!--cái đã có-->
-                <div class="col-md-1"> <!--1 cột 5 hình bên trái-->
-                    <div class="d-flex mb-3" *ngFor="let product of products; index as i">
-                        <a class="me-3">
-                            <img [src]="product.imageUrl" (click)="changeThumbnail(i)" style="min-width: 60px; height: 60px;" class="img-md img-thumbnail" />
-                        </a>
-                    </div>
+                <div class="col-md-6">
+                    <p-galleria
+                    [value]="products"
+                    [verticalThumbnailViewPortHeight]="'250px'" 
+                    [showItemNavigators]="true"
+                    [numVisible]="3"
+                    thumbnailsPosition="left"
+                    style="height: 400px;">
+
+                    <ng-template pTemplate="item" let-product>
+                        <img 
+                            [src]="product.imageUrl"
+                            style="height: 500px; display: block; width:500px"/>
+                    </ng-template>
+                    <ng-template pTemplate="thumbnail" let-product let-i="index"> 
+                        <div class="grid grid-nogutter  
+                                    justify-content-center"> 
+                        <img [src]="product.imageUrl" height="70px"/> 
+                    </div> 
+                    </ng-template> 
+                </p-galleria>
                 </div>
-
-                <aside class="col-md-5"> <!--ndung bên trái cột=5-->
-                    <div class="border rounded-4 mb-3 d-flex justify-content-center"> <!--hình chính-->
-                        <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image">
-                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" [src]="thumbnail.imageUrl" />
-                        </a>
-                    </div>
-
-                </aside>
+                
                 <main class="col-md-6"> <!--cột bên phải-->
                     <div class="ps-md-3"> <!--padding left=3-->
-                        <h4 class="title text-dark"> <!--tên sản phẩm-->
-                            {{thumbnail.name}}
-                        </h4>
+                        <h3 class="title "> <!--tên sản phẩm-->
+                            {{thumbnail?.name}}
+                        </h3>
                         <div>Mã sản phẩm: 
-                            <b>{{thumbnail.id}}</b>
+                            <b>{{thumbnail?.id}}</b>
                         </div>
                         <hr/>
       
                         <div class="price mb-3"> <!--giá-->
-                            {{thumbnail.price}} VNĐ
-        
+                            {{thumbnail?.price}} VNĐ
                         </div>
                     </div>
       
                     <div class="row ps-md-3"> <!--chọn số lượng-->
                   
                         <div class="col-md-4 col-6 mb-3">
-                            <label class="mb-2 d-block">Số lượng</label>
-                            <div class="input-group mb-3" style="width: 170px;">
+                            
+                            <!-- <div class="input-group mb-3" style="width: 170px;">
                                 <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
                                     <i class="fas fa-minus"></i>
                                 </button>
@@ -61,10 +68,23 @@
                                 <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
                                     <i class="fas fa-plus"></i>
                                 </button>
+                            </div> -->
+                            <div class="product__details__quantity">
+                                <div class="quantity">
+                                    
+                                    <label class=" d-block">Số lượng</label>
+                                    <div class="pro-qty mt-3">
+                                        
+                                        <span class="minus" (click)="decrease()">-</span>
+                                        <input type="number" class="count" name="qty" [(ngModel)]="quantity" (change)="handleChange($event)" />
+                                        <span class="plus" (click)="increase()">+</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
+                        <div class="row mt-4">
                             <div class="col-md-6 mb-3">
+                                <!-- <button type="button" class="btn add-to-cart w-100" (click)="addCart(product)">Thêm vào giỏ hàng</button> -->
                                 <button type="button" class="btn add-to-cart w-100">Thêm vào giỏ hàng</button>
                             </div>
                             <div class="col-md-6 mb-3">
@@ -72,88 +92,116 @@
                             </div>
                         </div>
                     </div>
-                    
-                
-                
-                    <br>
-                    <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> 
-                        <i class="me-1 fa fa-heart fa-lg"></i> Save </a> <!--thêm vào yêu thích-->
+                <!-- <span class="favorite {{product.favorite? '': 'not'}}">
+                    <i class="me-1 fa fa-heart fa-lg"></i>
+                </span> -->
+        
+                    <!-- <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> 
+                        <i class="me-1 fa fa-heart fa-lg"></i> Save </a>  -->
 
                 </main>
-          </div>
+
+            </div>
+
+
         </div>
     </section>
-
-
-    <section class="bg-light border-top py-4"> <!--dải nền nhạt, có đường viền trên, padding top and bottom = 4-->
-        <div class="container">
-            <div class="row">
-                <div class=" mb-4">
-                    <div class="border rounded-2 px-3 py-2 bg-white">
-                <!-- Pills navs -->
-                        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-                            <li class="nav-item d-flex col-md-2" role="presentation">
-                                <a class="nav-link d-flex align-items-center justify-content-center active" id="product-detail" data-mdb-toggle="pill" href="#product-detail" role="tab" aria-controls="product-detail" aria-selected="true">
-                                Chi tiết sản phẩm</a> <!--active: đánh dấu tab này là tab được chọn-->
-                            </li>
-                <!--CÒN TAB ĐÁNH GIÁ-->
-                            <li class="nav-item d-flex col-md-2" role="presentation">
-                                <a class="nav-link d-flex align-items-center justify-content-center" id="comment" data-mdb-toggle="pill" href="#comment" role="tab" aria-controls="comment" aria-selected="false">
-                                Đánh giá</a>
-                            </li>
+    <section>
+        <div class="container border">
+            <div class="product-details">
+            <mat-tab-group mat-align-tabs="center" class="tab-group-custom">
+                <mat-tab > 
+                    <ng-template mat-tab-label>
+                        Mô tả sản phẩm
+                    </ng-template>
+                    <div class="product-details-tab-desc pt-4">
+                        <ul class="list-style mb-0">
+                            <li>Gồm 64 bút sáp màu bé xinh được gói tỉ mỉ trong chiếc hộp xinh xắn</li>
+                            <li>Màu bút sáp lên mịn, đẹp, có thể chồng lớp nhẹ nhàng làm tăng độ bóng và sắc tố của màu mà không làm bay màu</li>
+                            <li>Được làm bằng các nguyên liệu sạch, thân thiện với môi trường</li>
+                            <li>Màu sắc sống động, rực rỡ giúp khơi gợi tí tưởng tượng và sáng tạo của trẻ</li>
+                            <li>Phù hợp với các nhu cầu giải trí và học tập cho trẻ</li>
                         </ul>
-
-                        <!--<ul class="tab-nav nav-pills nav-justified mb-3" id="ex1" role="tablist"></ul>
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab"
-                                href="#tab1" role="tab" aria-controls="home" aria-selected="true">
-                                    Chi tiết sản phẩm</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="contact-tab" data-toggle="tab"
-                                href="#tab2" role="tab" aria-controls="contact" aria-selected="false">
-                                Đánh giá</a>
-                            </li>
-                        </ul>
-                    -->
-                        <div class="tab-content" id="ex1-content"> <!--chi tiết sản phẩm-->
-                            <div class="tab-pane fade show active" id="product-detail" role="tabpanel" aria-labelledby="product-detail">
-                                <ul class="list-style mb-0">
-                                    <li>Gồm 64 bút sáp màu bé xinh được gói tỉ mỉ trong chiếc hộp xinh xắn</li>
-                                    <li>Màu bút sáp lên mịn, đẹp, có thể chồng lớp nhẹ nhàng làm tăng độ bóng và sắc tố của màu mà không làm bay màu</li>
-                                    <li>Được làm bằng các nguyên liệu sạch, thân thiện với môi trường</li>
-                                    <li>Màu sắc sống động, rực rỡ giúp khơi gợi tí tưởng tượng và sáng tạo của trẻ</li>
-                                    <li>Phù hợp với các nhu cầu giải trí và học tập cho trẻ</li>
-                                </ul>
-                                <table class="table border mt-3 mb-2">
-                                    <tr>
-                                        <th class="py-2">Thương hiệu</th> <!--padding top and bottom = 2-->
-                                        <td class="py-2">Crayola</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="py-2">Xuất xứ</th>
-                                        <td class="py-2">Mỹ</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="py-2">Trọng lượng</th>
-                                        <td class="py-2">380 gram</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="py-2">Kích thước bao bì</th>
-                                        <td class="py-2">14.45 x 12.54 x 3.97 cm</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="py-2">Khuyến cáo</th>
-                                        <td class="py-2">Tránh nguồn nhiệt, hóa chất. Không thích hợp cho trẻ dưới 3 tuổi</td>
-                                    </tr>
-                                </table>
+                        <table class="table border mt-3 mb-2">
+                            <tr>
+                                <th class="py-2">Thương hiệu</th> <!--padding top and bottom = 2-->
+                                <td class="py-2">Crayola</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2">Xuất xứ</th>
+                                <td class="py-2">Mỹ</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2">Trọng lượng</th>
+                                <td class="py-2">380 gram</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2">Kích thước bao bì</th>
+                                <td class="py-2">14.45 x 12.54 x 3.97 cm</td>
+                            </tr>
+                            <tr>
+                                <th class="py-2">Khuyến cáo</th>
+                                <td class="py-2">Tránh nguồn nhiệt, hóa chất. Không thích hợp cho trẻ dưới 3 tuổi</td>
+                            </tr>
+                        </table>
+                    </div>
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Đánh giá
+                    </ng-template> 
+                    <div class="tab-pane container">
+                            
+                        <div class="user-review pt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://thuvienmeme.com/wp-content/uploads/2023/08/meo-do-ngon-tay-ok-khoc.jpg" alt="User Avatar" class="user-avatar">
+                                <div>
+                                    <h5>nnphuyen563</h5>
+                                    <div class="user-rating">
+                                        ★★★★☆ <!-- Số sao đánh giá -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-text">
+                                <p>Sản phẩm rất tốt, đúng như mô tả. Giao hàng nhanh chóng, đóng gói cẩn thận. Rất hài lòng!</p>
+                            </div>
+                        </div>
+                        <div class="user-review pt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-cute-pug-avatar-with-a-yellow-background-png-image_1873432.jpg" alt="User Avatar" class="user-avatar">
+                                <div>
+                                    <h5>tammchannn</h5>
+                                    <div class="user-rating">
+                                        ★★★★★ <!-- Số sao đánh giá -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-text">
+                                <p>Rất đáng mua, giá còn rẻ nữa.</p>
+                            </div>
+                        </div>
+                        <div class="user-review pt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://beatpet.com/wp-content/uploads/2023/02/avatar-cho-shiba-1.jpg" alt="User Avatar" class="user-avatar">
+                                <div>
+                                    <h5>nana0786</h5>
+                                    <div class="user-rating">
+                                        ★★★★★ <!-- Số sao đánh giá -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-text">
+                                <p>Sản phẩm rất tuyệt, bé nhà tôi rất thích</p>
                             </div>
                         </div>
                     </div>
-                </div>    
-            </div>
+                </mat-tab>
+            </mat-tab-group>
         </div>
-    </section>
+        </div>
+    </section> 
+
+
 
 
     <!--những sản phẩm liên quan-->
@@ -161,135 +209,27 @@
         <div class="container">
             <div class="row">
                 <h4 class="relative-product py-3">Sản phẩm liên quan</h4>
-                <div class="info col-md-3"> <!--sản phẩm thứ nhất-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/2a.png" class="card-img" alt="" />
-                  
+                <div class="col-6 col-md-3 " *ngFor="let product of products; index as i">
+                    <a routerLink="productDetail/{{product.name}}" [queryParams]="{id: product.id}"  class="text-decoration-none" >
+                        <div class="card mb-3" >
+                            <img [src]="product.imageUrl" class="card-img" alt="" id="hinh{{i + 1}}">
                             <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Đất nặn 24 màu Kiddy Clay</h5>
-                                <h6 class="card-text price mb-1">36,000 VND</h6>
-                        
+                                <h6 class="text-black-50 p-2">{{product.category}}</h6>
+                                <h5 class="card-title text-center mt-2">{{product.name}}</h5>
+                                <h6 class="card-text text-center price mb-1">{{product.price}} VND</h6>
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="stars mr-auto align-items-center">
+                                        <app-star-rating [stars]="product.star" />
+                                    </div>
+                                    <div class="mt-2 ml">
+                                        <span class="card-title"> Có sẵn: {{product.stock}}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </a>
-                 
-                </div>
-
-                <div class="info col-md-3"> <!--sp thứ 2-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/3a.jpg"  class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Sách tô màu Barbie - 12 nàng công chúa thích khiêu vũ</h5>
-                                <h6 class="card-text  price mb-1">36,000 VND</h6>
-                            </div>
-                        </div>
-                        
-                    </a>
-                </div>
-                <div class="info col-md-3"> <!--sp thứ 3-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/4b.jpg"  class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Đất nặn Deli 12 màu chất liệu an toàn có 03 khuôn kèm 01 hộp nhựa có quai xách</h5>
-                                <h6 class="card-text  price mb-1">30,000 VND</h6>
-                            </div>
-                        </div>
-                        
-                    </a>
-                </div>
-
-                <div class="info col-md-3"> <!--sp thứ 4-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/5a.png"  class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Đồ chơi sticker Thiết kế thời trang đính kim tuyến TOPModel</h5>
-                                <h6 class="card-text  price mb-1">199,000 VND</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!--hàng 2-->
-            <div class="row py-3">
-                <div class="info col-md-3"> <!--sản phẩm thứ 5-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/6a.png" class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Bút Sáp 24 Màu Colokit Disney Frozen</h5>
-                                <h6 class="card-text  price mb-1">62,000 VND</h6>
-                            </div>
-                        </div>
-                        
-                    </a>
-                </div>
-                <div class="info col-md-3"> <!--sp thứ 6-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/7a.png" class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Nhãn dãn sticker cuộc sống vui nhộn chủ đề Rạp xiếc</h5>
-                                <h6 class="card-text  price mb-1">145,000 VND</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="info col-md-3"> <!--sp thứ 7-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/8a.jpg" class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Sách học vẽ Họa sĩ tí hon - Learn to draw...  Ocean Wonders! - Nào, ta cùng học vẽ...đại dương diệu kỳ!</h5>
-                                <h6 class="card-text  price mb-1">55,000 VND</h6>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="info col-md-3"> <!--sp thứ 8-->
-                    <a href="#" class="me-3">
-                        <div class="card mb-3">
-                            <img src="assets/img/product/12a.png" class="card-img" alt="" />
-                            <div class="p-2">
-                                <span class="text-black-50">
-                                    Danh muc
-                                </span>
-                                <h5 class="card-title  mt-2"> Combo hộp 4 màu bột nặn Clever Dough</h5>
-                                <h6 class="card-text  price mb-1">63,000 VND</h6>
-                            </div>
-                        </div>
-                    </a>
-
                 </div>
             </div>
         </div>
-        
-        
     </section>
 </body>

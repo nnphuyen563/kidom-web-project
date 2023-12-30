@@ -28,6 +28,11 @@ import { TitleComponent } from './components/partials/title/title.component';
 
 
 import { FormsModule } from '@angular/forms';
+// import { TabViewModule } from 'primeng/tabview';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GalleriaModule } from 'primeng/galleria'; 
 
 @NgModule({
   declarations: [
@@ -59,8 +64,12 @@ import { FormsModule } from '@angular/forms';
 
     ReactiveFormsModule,
 
-    FormsModule
-
+    FormsModule,
+    // TabViewModule,
+    MatTabsModule,
+    BrowserAnimationsModule, 
+    MatIconModule,
+    GalleriaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

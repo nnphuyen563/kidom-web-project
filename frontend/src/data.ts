@@ -1,8 +1,10 @@
 import { Banner } from "./app/shared/models/Banner";
 import { Product } from "./app/shared/models/Product";
+import { Catagory } from "./app/shared/models/Catagory";
 
 const bannerPath = 'assets/img/banner/';
 const productPath = 'assets/img/product/'
+const catagoryPath ='assets/img/catagory/'
 
 export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner1.jpeg'},
@@ -13,12 +15,39 @@ export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner6.jpeg'},
 ]
 
+export const CATAGORYS: Catagory[] = [
+    {
+        imageUrl: catagoryPath + 'action.jpg',
+        name: "Hành động",
+    },
+    {
+        imageUrl: catagoryPath + 'art.jpg',
+        name: "Mỹ thuật"
+    },
+    {
+        imageUrl: catagoryPath + 'boardgame.jpg',
+        name: "Board Game",
+    },
+    {
+        imageUrl: catagoryPath + 'collect.jpg',
+        name: "Bộ sưu tập"
+    },
+    {
+        imageUrl: catagoryPath + 'doll.jpg',
+        name: "Búp bê",
+    },
+    {
+        imageUrl: catagoryPath + 'outdoor.jpg',
+        name: "Trò chơi ngoài trời"
+    }
+]
+
 export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1_thumb.png',
-        name: "Bút lông",
-        category: 'Bup be',
-        price: 199.999,
+        name: "Hộp màu",
+        category: 'Mỹ thuật',
+        price: 199.000,
         id: 1,
         description: 'Description of product 1',
         star: 4,
@@ -27,7 +56,7 @@ export const PRODUCTS: Product[] = [
     },
     {
         imageUrl: productPath + '1b.jpg',
-        name: "gấu bông",
+        name: "Toy's name",
         category: 'Con bo',
         price: 199.999,
         id: 2,

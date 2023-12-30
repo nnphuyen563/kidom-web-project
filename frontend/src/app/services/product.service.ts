@@ -24,4 +24,11 @@ export class ProductService {
   getProductThumbnail(id: string): Product {
     return this.getAll().filter(product => (product.id == +id && product.imageUrl.includes('_thumb.')))[0];
   }
+  getAllProductsBySearchTerm(searchTerm: string){
+    return this.getAll().filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  }
+  getProductsByCategory(category: string): Product[] {
+    
+    return this.getAll().filter(thumbnail => thumbnail.category ===category);
+}
 }
