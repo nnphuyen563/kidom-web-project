@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,9 +28,8 @@ export class LoginComponent implements OnInit{
   submit(){
     this.isSubmitted = true;
     if (this.loginForm.invalid) return;
-
-    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`)
     
+    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`)
     this.router.navigate(['']);
   }
 }

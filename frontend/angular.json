@@ -55,9 +55,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/js/design-by-you.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   // Import ảnh
-  imageUrl: string = '/assets/img/footer/Footer.svg';
+  imageUrl: string = 'assets/img/footer/Footer.svg';
 }
