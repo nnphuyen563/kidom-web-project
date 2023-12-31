@@ -1,4 +1,50 @@
 
+.img {
+    display: flex;
+    float: left;
+    width: 14%;
+    margin-right: 15px;
+}
+.p1 {
+    display: flex;
+}
+h1 {
+    color: white;
+    font-weight: bolder;
+}
+.hd {
+    background-color: #0D5D9C;
+}
+.imgshop {
+    width: 30%;
+    border-radius: 10%;
+    float: right;
+    margin-left: 15px;
+}
+p {
+    color: #0D5D9C;
+    text-align: justify;
+}
+.deliverytext {
+    color: #0D5D9C;
+    text-align: center;
+    font-weight:bolder ;
+    font-size: 10px;
+    padding-top: 15px;
+}
+.deliveryimg {
+    width: 10%;
+    margin-right: 10px; /* Khoảng cách giữa hình ảnh và đoạn văn */
+}
+.col-3 {
+    padding-left: 20px
+}
+@media (max-width: 1000px) {
+    .deliveryline {
+        display: none;
+    }
+}
+
 #section0, #section1, #section2, #section3, #section4, #section5, #section6{
     border-radius: 10px; /* This removes the rounded corners */
     border: 2px solid rgba(211, 90, 138, 0.018);

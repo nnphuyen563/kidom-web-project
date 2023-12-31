@@ -9,6 +9,9 @@ import { CategoryComponent } from './components/partials/category/category.compo
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
+import { AboutUsComponent } from './components/pages/about-us/about-us.component';
+import { CartComponent } from './components/pages/cart/cart.component';
+
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -20,7 +23,11 @@ const routes: Routes = [
   {path: 'search/:searchTerm', component:HomeComponent},
   {path: 'faq', component:FaqComponent},
   {path: 'policy', component:PolicyComponent},
-  {path: 'blog', component:BlogComponent}
+  {path: 'blog', component:BlogComponent},
+  {path: 'aboutus', component: AboutUsComponent},
+  {path: 'search/:searchTerm', component:HomeComponent},
+  {path: 'aboutus', component: AboutUsComponent},
+  {path: 'cart', component: CartComponent}
 ];
 
 @NgModule({
