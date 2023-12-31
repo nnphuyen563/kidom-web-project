@@ -5,44 +5,31 @@ header {
 
 }
 /*Top navbar*/
-.navbar {
+.top-section {
     background-color: #0D5D9C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+    font-size: 16px;
 }
-.col-md-4{
+.nav-item i {
+    font-size: 1rem;
+    margin-right: 4px;
+}
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+.logo {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
-
-/* Chỉnh kích thước của icon lớn hơn chữ */
-.col-md-4 .nav-link {
-    font-size: 10px !important;
-    color: #ffffff;
-    transform: scale(1.5) !important;
-    /* margin-right: 8px; */
+.logo img {
+    width: 180px;
+    margin-top: -10px;
 }
 /*căn phải ul giỏ hàng, đăng nhập*/
 .nav-outer {
     margin-left: auto;
 }
 
-.col-md-4 .nav-link i {
-    color: #ffffff; /* Màu trắng cho icon */  
-}
-
-/* .container {
-    display: flex;
-} */
-
-/*loại bỏ kiểu danh sách mặc định*/
-/* ul {
-    display: flex;
-    list-style-type: none; 
-} */
 /*chiều rộng khoảng chứa dropdown*/
 .dropdown-menu a{
     width: 100%;
@@ -62,15 +49,16 @@ header {
 .bottom-navbar .nav-link {
     font-size: 16px;
 }
+.designbyu img{
+    height: 50px;
+}
 /*khi trỏ chuột vào menu, background chuyển thành trắng và chữ chuyển thành xanh*/
 .navbar-nav li:hover a {
     background-color: whitesmoke;
     color: #407EC9;
     cursor: pointer;
 }
-.nav-item {
-    position: relative;
-}
+
 .dropdown-menu{
     position: absolute;
     z-index: 1;
@@ -90,6 +78,15 @@ header {
     color:#ffffff;
 }
 
-.header {
-    background-color: #0D5D9C;
+@media only screen and (max-width: 999px){
+    .bottom-navbar {
+        height: 0;
+    }
+    .logo img {
+        align-items: center;
+
+    }
+    .nav-item a, .nav-item i {
+        text-align: center;
+    }
 }
