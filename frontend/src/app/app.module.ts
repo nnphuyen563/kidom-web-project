@@ -25,6 +25,11 @@ import { PolicyComponent } from './components/pages/policy/policy.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
+// import { TabViewModule } from 'primeng/tabview';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GalleriaModule } from 'primeng/galleria'; 
 
 @NgModule({
   declarations: [
@@ -54,7 +59,12 @@ import { TitleComponent } from './components/partials/title/title.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    // TabViewModule,
+    MatTabsModule,
+    BrowserAnimationsModule, 
+    MatIconModule,
+    GalleriaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

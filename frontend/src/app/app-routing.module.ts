@@ -5,6 +5,7 @@ import { ProductDetailComponent } from './components/pages/product-detail/produc
 import { LoginComponent } from './components/pages/login/login.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
 import { ForgotPassComponent } from './components/pages/forgot-pass/forgot-pass.component';
+import { AccountComponent } from './components/pages/account/account.component';
 import { CategoryComponent } from './components/partials/category/category.component';
 import { FaqComponent } from './components/pages/faq/faq.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
@@ -19,6 +20,9 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'signup', component:SignupComponent},
   {path: 'forget-pass', component:ForgotPassComponent},
+  {path: 'search/:searchTerm', component:HomeComponent},
+  {path: 'productDetail/:productId', component:ProductDetailComponent},
+  {path: 'account', component:AccountComponent},
   {path: 'catagory/:catagoryName', component: CategoryComponent},
   {path: 'search/:searchTerm', component:HomeComponent},
   {path: 'faq', component:FaqComponent},

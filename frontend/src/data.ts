@@ -39,6 +39,29 @@ export const CATAGORYS: Catagory[] = [
     {
         imageUrl: catagoryPath + 'outdoor.jpg',
         name: "Trò chơi ngoài trời"
+    },
+    {    imageUrl: catagoryPath + 'Hoatrang.png',
+        name: "Hoá trang",
+    },
+    {
+        imageUrl: catagoryPath + 'art.jpg',
+        name: "Mỹ thuật"
+    },
+    {
+        imageUrl: catagoryPath + 'boardgame.jpg',
+        name: "Board Game",
+    },
+    {
+        imageUrl: catagoryPath + 'collect.jpg',
+        name: "Bộ sưu tập"
+    },
+    {
+        imageUrl: catagoryPath + 'doll.jpg',
+        name: "Búp bê",
+    },
+    {
+        imageUrl: catagoryPath + 'outdoor.jpg',
+        name: "Trò chơi ngoài trời"
     }
 ]
 
