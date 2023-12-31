@@ -6,6 +6,8 @@ import { ProductService } from '../../../services/product.service';
 import { Catagory } from '../../../shared/models/Catagory';
 import { CatagoryService } from '../../../services/catagory.service';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from '../../../../item';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +25,7 @@ export class HomeComponent {
   //   this.catagorys= catagoryServices.getAll()
 
   constructor(
+    private cartService: CartService,
     private bannerServices: BannerService,
     private productServices: ProductService,
     private activatedRoute: ActivatedRoute,
@@ -40,5 +43,10 @@ export class HomeComponent {
         this.products = productServices.getThumbnail();
       }
     });
+  }
+
+  addToCart(product: Item) {
+    // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
+    this.cartService.addToCart(product);
   }
 }

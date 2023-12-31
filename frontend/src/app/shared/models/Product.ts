@@ -11,4 +11,5 @@ export class Product {
     brand?: string; 
     stock!: number;
     time!: Date;
+    quantity!: number;
 }

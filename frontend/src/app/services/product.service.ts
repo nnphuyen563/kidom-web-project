@@ -28,4 +28,8 @@ export class ProductService {
   getAllProductsBySearchTerm(searchTerm: string){
     return this.getAll().filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
   }
+
+  getProductsByCategory(category: string): Product[] {
+    return this.getAll().filter(product => product.category.toLowerCase() === category.toLowerCase());
+  }
 }
