@@ -1,70 +1,33 @@
-<<<<<<< HEAD
-<body [ngClass]="{'menu-active': menuActive}">
-    <section class="top-section"  >
-        <div class="container top-container">
-            <div class="row pt-4">
-                <div class="menu_icon" [class.menu_icon_Class]="menu_icon_variable" (click)="openMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="col-md-2 col-sm-12 col-12">
-                    <a routerLink="/" class="logo justify-content-center">
-                        <img src="assets/img/logo/logo-red.png">
-                    </a>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-5 ol-sm-12 col-12">
-                    <div class="search">
-                        <app-search></app-search>
-                    </div>
-=======
 <header>
-    <div class="navbar pb-1"> 
-        <div class="container">
+    <section class="top-section"> 
+        <div class="container top-container">
             <div class="top-navbar row pt-4">
-                <div class="col-md-2">
-                  
+                <div class="col-md-2 col-sm-12 col-12">
                     <button class="navbar-toggler shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a routerLink="/" class="logo d-block text-center">
+                    <a routerLink="/" class="logo d-flex justify-content-center">
                         <img src="assets/img/logo/logo-red.png" class="img-fluid" alt="logo">
                     </a>
                 </div>
                 <div class="col-md-1"></div>
-                <div class="col-md-5 my-auto">
-                    <form role="search">
-                        <div class="input-group">
+                <div class="col-md-5 col-sm-12 col-12">
+                        <div class="search">
                             <app-search></app-search>
-                            <!-- <input type="search" placeholder="Tìm kiếm sản phẩm" class="form-control" />
-                            <button class="btn" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button> -->
                         </div>
-                    </form>
->>>>>>> 0db53822d9b72b2f594ce3986e6127398b27f114
                 </div>
                 <div class="col-md-4 col-sm-12 col-12 mb-2">
-                    <ul class="nav justify-content-center nav-outer">
+                    <ul class="nav justify-content-center nav-outer mt-2"> 
                         <li class="nav-item me-3">
                             <a routerLink="/account">
                                 <i class="fa-solid fa-phone"></i> Tư vấn
                             </a>
                         </li>
-                        <li class="nav-item me-3">
-                            <a routerLink="/cart">
+                        <li class="nav-item me-3"> 
+                            <a routerLink="/cart" >
                                 <i class="fa-solid fa-shopping-cart"></i> Giỏ hàng
                             </a>
-<<<<<<< HEAD
-=======
                         </li>   
-                        <li class="nav-item">
-                            <a routerLink="/login" class="nav-link" id="navbar" role="button">
-                                <i class="fa-regular fa-circle-user"></i> Đăng nhập /
-                            </a>
->>>>>>> 0db53822d9b72b2f594ce3986e6127398b27f114
-                        </li>
                         <li class="nav-item">
                             <a routerLink="/login">
                                 <i class="fa-regular fa-circle-user"></i> Đăng nhập /
@@ -72,7 +35,7 @@
                         </li>
                         <li class="nav-item">
                             <a routerLink="/signup">
-                                 Đăng ký
+                                Đăng ký
                             </a>
                         </li>
                     </ul>
@@ -80,62 +43,7 @@
             </div>
         </div>
     </section>
-    <section class="bottom-section">
-        <div class="container bottom-section">
-            <div class="row">
-                
-                <div class="menu-pro text-start">
-                   
-                    <div class="menu" [class.menuClass]="menuVariable">
-                        <ul>
-                            <li class="designbyu">
-                                <a routerLink="/design-by-you" target="_blank" class="designbyu">
-                                    <img src="assets/img/logo/designbyu.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a routerLink="/" class="nav-link dropdown-toggle">Sản phẩm</a>
-                                <div class="dropdown-menu">
-                                    <a routerLink="/" class="dropdown-item">Action</a>
-                                    <a routerLink="/" class="dropdown-item">Another action</a>
-                                    <a routerLink="/" class="dropdown-item">Something else here</a>
-                                </div>
-                            </li>
-                            <li>
-                                <a routerLink="/" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Phổ biến
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-dark">
-                                    <a routerLink="/" class="dropdown-item">Action</a>
-                                    <a routerLink="/" class="dropdown-item">Another action</a>
-                                    <a routerLink="/" class="dropdown-item">Something else here</a>
-                                </div>
-                            </li>
-                            <li>
-                                <a routerLink="/" class="nav-link dropdown-toggle">Mới</a>
-                            </li>
-                            <li>
-                                <a routerLink="/" class="nav-link dropdown-toggle">Khuyến mãi</a>
-                            </li>
-                            <li>
-                                <a routerLink="/about-us" class="nav-link">Về Kidom</a>
-                            </li>
-                            <li>
-                                <a routerLink="/blog" class="nav-link">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-    
-</body>
 
-<<<<<<< HEAD
-    
-=======
     <nav class="bottom-navbar navbar-expand-lg fixed-top" style="z-index: 999;">
         <div class="container">
             <div class="offcanvas offcanvas-start text-bg-dark row" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
@@ -146,9 +54,11 @@
                 </div>
                 <!--navbar body-->
                 <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-9">
-                    <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
-                        <li class="nav-item mx-3">
-                            <a class="nav-link" routerLink="/design-by-you">Design by you</a>
+                    <ul class="navbar-nav justify-content-start fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item justify-content-center  mx-3">
+                            <a class="designbyu" routerLink="/design-by-you" target="_blank" >
+                                <img src="assets/img/logo/designbyu.png"/>
+                             </a>
                         </li>
                         <li class="nav-item mx-3">
                             <a routerLink="/" class="nav-link active" aria-current="page">Trang chủ</a>
@@ -156,9 +66,13 @@
                         <li class="nav-item dropdown mx-3">
                             <a routerLink="/" class="nav-link dropdown-toggle">Sản phẩm</a>
                             <div class="dropdown-menu dropdown-menu-dark">
-                                <a routerLink="/" class="dropdown-item">Action</a>
-                                <a routerLink="/" class="dropdown-item">Another action</a>
-                                <a routerLink="/" class="dropdown-item">Something else here</a>
+                                <a routerLink="/" class="dropdown-item">Hành động</a>
+                                <a routerLink="/" class="dropdown-item">Mỹ thuật</a>
+                                <a routerLink="/" class="dropdown-item">Bộ sưu tập</a>
+                                <a routerLink="/" class="dropdown-item">Búp bê</a>
+                                <a routerLink="/" class="dropdown-item">Trò chơi ngoài trời</a>
+
+
                             </div>
                         </li>
                         <li class="nav-item dropdown mx-3">
@@ -166,9 +80,9 @@
                                 Phổ biến
                             </a>
                             <div class="dropdown-menu dropdown-menu-dark">
-                                <a routerLink="/" class="dropdown-item">Action</a>
-                                <a routerLink="/" class="dropdown-item">Another action</a>
-                                <a routerLink="/" class="dropdown-item">Something else here</a>
+                                <a routerLink="/" class="dropdown-item">toy 1</a>
+                                <a routerLink="/" class="dropdown-item">toy 2</a>
+                                <a routerLink="/" class="dropdown-item">toy 3</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown mx-3">
@@ -189,30 +103,3 @@
         </div>     
     </nav>
 </header>
-
-<!-- <header>
-    <div class="container">
-        <a routerLink ="/" class="logo">Kidom</a>
-        <nav>
-            <ul>
-                <li>
-                    <a routerLink="/login">Đăng nhập</a>
-                </li>
-                <li class="menu-container">
-                    <a routerLink="/dashboard">Tam</a>
-                    <div class="menu">
-                        <a routerLink="/profile">Profile</a>
-                        <a routerLink="/orders">Orders</a>
-                        <a>Logout</a>
-                    </div>
-                </li>
-                <li>
-                    <a routerLink="/cart-page">
-                        Cart<span>3</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header> -->
->>>>>>> 0db53822d9b72b2f594ce3986e6127398b27f114
