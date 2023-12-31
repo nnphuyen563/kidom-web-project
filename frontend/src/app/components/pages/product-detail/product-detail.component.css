@@ -1,24 +1,89 @@
+
 body {
     font-family: myFontSub !important; 
 
 }
-.add-to-cart {
+.add-to-cart{
     background-color: #328320 !important;
     color: #ffffff;
     border-radius: 10px;
+    height: 50px;
 }
 
 /* CSS tùy chỉnh cho button "Mua ngay" */
 .buy-now {
     background-color: #0D5D9C !important;
     color: #ffffff;
+    border-radius: 10px;
+    height: 50px;
+}
+/*chỉnh chọn số lượng*/
+.pro-qty {
+    display: flex;
+    align-items: center;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pro-qty span {
+    padding: 5px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+}
+
+.pro-qty input {
+    border: none;
+    text-align: center;
+    width: 40px;
+    height: 100%;
+}
+.title {
+    font-size: 30px !important;
+    font-weight: bold;
+    color: #407EC9;
+    font-family: myFontSub;
 }
 .price {
-
-    font-size: 16px;
+    font-size: 25px;
     color: #F52A41;
     font-weight: bold;
+} 
+
+
+.p-galleria-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Đảm bảo chiều cao của thumbnail là 100% */
 }
+
+
+
+/*----------------------------------*/
+.table th {
+    padding-left: 15px;
+  }
+
+  /* Kích thước font và màu sắc cho thẻ th và td trong table */
+.table th, .table td {
+    font-size: 16px;
+    color: #333;
+  }
+
+ 
+.user-review img{
+    width: 60px;
+    padding-right: 15px;
+}
+.user-review-text p{
+    padding-left: 65px;
+}
+
+/*-----------------------*/
+/*sản phẩm liên quan*/
 .info h5, h6 {
     height: 70%; /* Chiều cao cố định cho info */
     display: flex;
@@ -38,13 +103,12 @@ body {
     color: #ff0000; /* Màu chữ cho giá tiền */
     font-size: 16px;
 }
-.title {
-    font-size: 20px;
-    font-weight: bold;
-}
+
 .relative-product {
     font-weight: bold;
     text-align: center;
+    font-size: 20px;
+    color: #0D5D9C;
 }
 .info h5 { /*cho chiều cao tên sản phẩm liên quan bằng nhau để giá các sản phẩm ngang hàng nhau*/
     height: 50px;

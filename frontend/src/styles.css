@@ -15,3 +15,6 @@
     --button-color-green: #328321;
     --button-color-red: #e82416;
 }
+
+html, body { height: 100%; }
+
