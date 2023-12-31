@@ -21,12 +21,16 @@ export class ProductDetailComponent implements OnInit {
     relatedProducts: Product[] = [];
   constructor(
     private productServices: ProductService,
-
     private activatedRoute: ActivatedRoute,
     private catagoryServices: CatagoryService,
     private route: ActivatedRoute
   ) {
-   
+    
+    route.queryParams.subscribe(params => {
+      this.products = productServices.getDetail(params['id']);
+      this.thumbnail = productServices.getProductThumbnail(params['id']);
+    });
+
     this.products = productServices.getThumbnail();
     this.catagorys= catagoryServices.getAll();
 
