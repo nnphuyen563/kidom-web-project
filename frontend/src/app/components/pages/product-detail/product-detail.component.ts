@@ -6,6 +6,8 @@ import { Catagory } from '../../../shared/models/Catagory';
 import { CatagoryService } from '../../../services/catagory.service';
 import { CartService} from '../../../services/cart.service';
 // import { faStar} from '@fortawesome/free-solid-svg-icons';
+import { Item } from '../../../../item';
+
 
 @Component({
     selector: 'app-product-detail',
@@ -23,7 +25,8 @@ export class ProductDetailComponent implements OnInit {
     private productServices: ProductService,
     private activatedRoute: ActivatedRoute,
     private catagoryServices: CatagoryService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartService: CartService
   ) {
     
     route.queryParams.subscribe(params => {
