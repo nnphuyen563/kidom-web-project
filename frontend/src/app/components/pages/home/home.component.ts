@@ -34,6 +34,7 @@ export class HomeComponent {
   ) {
     this.banners = bannerServices.getAll();
     this.products = productServices.getThumbnail();
+    this.catagorys= catagoryServices.getAll();
 
     this.activatedRoute.params.subscribe((params) => {
       if (params.searchTerm) {
