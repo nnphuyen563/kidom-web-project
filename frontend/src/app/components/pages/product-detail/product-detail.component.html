@@ -64,8 +64,8 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 mb-3">
-                                <button type="button" class="btn add-to-cart w-100">Thêm vào giỏ hàng</button>
+                            <div class="col-md-6 mb-3" *ngFor="let product of products; index as i">
+                                <button type="button" class="btn add-to-cart w-100" (click)="addToCart(product)">Thêm vào giỏ hàng</button>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <button type="button" class="btn buy-now w-100">Mua ngay</button>
