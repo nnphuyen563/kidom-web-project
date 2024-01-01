@@ -81,5 +81,10 @@ export class ProductDetailComponent implements OnInit {
     this.thumbnail = this.products[index];
     this.products = this.products.slice(0, index).concat(this.products.slice(index + 1));
     this.products.push(temp);
-  } 
+  }
+
+  addToCart(product: Item) {
+    // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
+    this.cartService.addToCart(product);
+  }
 }
