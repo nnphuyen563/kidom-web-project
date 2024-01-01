@@ -22,15 +22,15 @@ public class User {
     public String getEmail() {
         return email;
     }
-    public void getEmail(String newEmail) {
+    public void setEmail(String newEmail) {
         this.email = newEmail;
     }
 
     public String getPassword() {
         return password;
     }
-    public void getPassword(String newPassword) {
-        this.password = newPassword;
+    public void setPassword(String encode) {
+        this.password = encode;
     }
 
     public Long getId() {
@@ -47,5 +47,8 @@ public class User {
 
     public void setRole(UserRole role) {
         this.role = role;
+    }
+
+    public void setName(String name) {
     }
 }
