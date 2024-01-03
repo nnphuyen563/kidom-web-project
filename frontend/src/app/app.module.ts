@@ -30,6 +30,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleriaModule } from 'primeng/galleria'; 
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,9 @@ import { GalleriaModule } from 'primeng/galleria';
     MatIconModule,
     GalleriaModule,
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
