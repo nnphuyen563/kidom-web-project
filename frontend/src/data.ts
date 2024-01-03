@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
         imageUrl: productPath + '1_thumb.png',
         name: "Hộp màu",
         category: 'Mỹ thuật',
-        price: 199.000,
+        price: 199.999,
         id: 1,
         description: 'Description of product 1',
         star: 3,

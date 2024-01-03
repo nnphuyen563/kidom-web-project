@@ -7,6 +7,9 @@
     font-family: myFontSub;
     src: url("assets/font/SAYURI - Vag Light.ttf");
 }
+* {
+    font-family: myFontSub;
+}
 
 :root {
     --bg-color: white;
