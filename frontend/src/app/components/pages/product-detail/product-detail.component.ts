@@ -26,7 +26,8 @@ export class ProductDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private catagoryServices: CatagoryService,
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router,
   ) {
     
     route.queryParams.subscribe(params => {
@@ -63,11 +64,6 @@ export class ProductDetailComponent implements OnInit {
     // Xử lý sự kiện khi giá trị thay đổi
     console.log('Quantity changed:', this.quantity);
   }
-//   addCart(item:any){
-//     this.cartService.getItems();
-//     this.cartService.addToCart(item,this.quantity);
-//     this.showSuccess("Add To Cart Successfully!");
-//   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -85,9 +81,17 @@ export class ProductDetailComponent implements OnInit {
     this.products = this.products.slice(0, index).concat(this.products.slice(index + 1));
     this.products.push(temp);
   }
-
-  addToCart(product: Item) {
-    // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
-    this.cartService.addToCart(product);
+  // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
+  // addToCart(product: Item) {
+  //   this.cartService.addToCart(product);
+  // }
+  addToCart(thumbnail: any) {
+    this.addToCart(thumbnail);
+  }
+  buyNow(thumbnail: any) {
+    // Thêm vào giỏ hàng
+    this.addToCart(thumbnail);
+    //Chuyển qua cart
+    this.router.navigate(['/cart']);
   }
 }

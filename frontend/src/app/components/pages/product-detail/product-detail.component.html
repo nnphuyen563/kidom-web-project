@@ -82,12 +82,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6 mb-3" *ngFor="let product of products; index as i">
+                        <div class="row mb-3 pt-4">
+                            <!-- <div class="col-md-6 mb-3" *ngFor="let product of products; index as i">
                                 <button type="button" class="btn add-to-cart w-100" (click)="addToCart(product)">Thêm vào giỏ hàng</button>
+                            </div> -->
+                            <div class="col-md-6 mb-3">
+                                <button type="button" class="btn add-to-cart" (click)="addToCart(thumbnail)">Thêm vào giỏ hàng</button>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <button type="button" class="btn buy-now w-100">Mua ngay</button>
+                                <button class="btn buy-now" (click)="buyNow(thumbnail)">Mua ngay</button>
+                                <!-- <button type="button" class="btn buy-now w-100">Mua ngay</button> -->
                             </div>
                         </div>
                     </div>
@@ -114,16 +118,17 @@
                         Mô tả sản phẩm
                     </ng-template>
                     <div class="product-details-tab-desc pt-4">
-                        <ul class="list-style mb-0">
+                        {{thumbnail.description}}
+                        <!-- <ul class="list-style mb-0">
                             <li>Gồm 64 bút sáp màu bé xinh được gói tỉ mỉ trong chiếc hộp xinh xắn</li>
                             <li>Màu bút sáp lên mịn, đẹp, có thể chồng lớp nhẹ nhàng làm tăng độ bóng và sắc tố của màu mà không làm bay màu</li>
                             <li>Được làm bằng các nguyên liệu sạch, thân thiện với môi trường</li>
                             <li>Màu sắc sống động, rực rỡ giúp khơi gợi tí tưởng tượng và sáng tạo của trẻ</li>
                             <li>Phù hợp với các nhu cầu giải trí và học tập cho trẻ</li>
-                        </ul>
-                        <table class="table border mt-3 mb-2">
+                        </ul> -->
+                        <!-- <table class="table border mt-3 mb-2">
                             <tr>
-                                <th class="py-2">Thương hiệu</th> <!--padding top and bottom = 2-->
+                                <th class="py-2">Thương hiệu</th>
                                 <td class="py-2">Crayola</td>
                             </tr>
                             <tr>
@@ -142,7 +147,7 @@
                                 <th class="py-2">Khuyến cáo</th>
                                 <td class="py-2">Tránh nguồn nhiệt, hóa chất. Không thích hợp cho trẻ dưới 3 tuổi</td>
                             </tr>
-                        </table>
+                        </table> -->
                     </div>
                 </mat-tab>
                 <mat-tab>
