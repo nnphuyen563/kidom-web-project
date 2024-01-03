@@ -32,22 +32,12 @@ export class ProductDetailComponent implements OnInit {
     route.queryParams.subscribe(params => {
       this.products = productServices.getDetail(params['id']);
       this.thumbnail = productServices.getProductThumbnail(params['id']);
+
+      console.log(this.products);
     });
 
-    this.products = productServices.getThumbnail();
+    // this.products = productServices.getThumbnail();
     this.catagorys= catagoryServices.getAll();
-
-    this.activatedRoute.params.subscribe((params) => {
-      if (params.searchTerm) {
-        this.products = this.productServices.getAllProductsBySearchTerm(params.searchTerm);
-      } else {
-        this.products = productServices.getThumbnail();
-      }
-      if (params.id) {
-        this.thumbnail = this.productServices.getProductThumbnail(params.id);
-        this.products = this.productServices.getDetail(params.id);
-    }
-    });
     
   }
 //chọn số lượng

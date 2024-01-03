@@ -18,7 +18,8 @@ export class ProductService {
   }
 
   getDetail(id: string): Product[] {
-    return this.getAll().filter(product => (product.id == +id && !(product.imageUrl.includes('_thumb.'))));
+    console.log(id);
+    return this.getAll().filter(product => (product.id.toString() === id));
   }
 
   getProductThumbnail(id: string): Product {

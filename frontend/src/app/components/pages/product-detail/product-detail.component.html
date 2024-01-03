@@ -20,25 +20,25 @@
             <div class="row gx-5"> <!--cái đã có-->
                 <div class="col-md-6">
                     <p-galleria
-                    [value]="products"
-                    [verticalThumbnailViewPortHeight]="'250px'" 
-                    [showItemNavigators]="true"
-                    [numVisible]="3"
-                    thumbnailsPosition="left"
-                    style="height: 400px;">
+                        [value]="products"
+                        [verticalThumbnailViewPortHeight]="'250px'" 
+                        [showItemNavigators]="true"
+                        [numVisible]="3"
+                        thumbnailsPosition="left"
+                        style="height: 400px;">
 
-                    <ng-template pTemplate="item" let-product>
-                        <img 
-                            [src]="product.imageUrl"
-                            style="height: 500px; display: block; width:500px"/>
-                    </ng-template>
-                    <ng-template pTemplate="thumbnail" let-product let-i="index"> 
-                        <div class="grid grid-nogutter  
-                                    justify-content-center"> 
-                        <img [src]="product.imageUrl" height="70px"/> 
-                    </div> 
-                    </ng-template> 
-                </p-galleria>
+                        <ng-template pTemplate="item" let-product>
+                            <img 
+                                [src]="product.imageUrl"
+                                style="height: 500px; display: block; width:500px"/>
+                        </ng-template>
+                        <ng-template pTemplate="thumbnail" let-product let-i="index"> 
+                            <div class="grid grid-nogutter  
+                                        justify-content-center"> 
+                            <img [src]="product.imageUrl" height="70px"/> 
+                        </div> 
+                        </ng-template> 
+                    </p-galleria>
                 </div>
                 
                 <main class="col-md-6"> <!--cột bên phải-->
@@ -83,8 +83,8 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-6 mb-3" *ngFor="let product of products; index as i">
-                                <button type="button" class="btn add-to-cart w-100" (click)="addToCart(product)">Thêm vào giỏ hàng</button>
+                            <div class="col-md-6 mb-3">
+                                <button type="button" class="btn add-to-cart w-100" (click)="addToCart(thumbnail)">Thêm vào giỏ hàng</button>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <button type="button" class="btn buy-now w-100">Mua ngay</button>
