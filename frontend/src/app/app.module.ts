@@ -25,6 +25,7 @@ import { PolicyComponent } from './components/pages/policy/policy.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,9 @@ import { TitleComponent } from './components/partials/title/title.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

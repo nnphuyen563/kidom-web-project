@@ -1,10 +1,27 @@
 import { Banner } from "./app/shared/models/Banner";
 import { Product } from "./app/shared/models/Product";
 import { Catagory } from "./app/shared/models/Catagory";
+import { User } from "./app/shared/models/User";
 
 const bannerPath = 'assets/img/banner/';
 const productPath = 'assets/img/product/'
 const catagoryPath ='assets/img/catagory/'
+
+export const USERS: User[] = [
+    {
+        account: "tuanna21411@st.uel.edu.vn",
+        password: "anhtuan716",
+        name: "Nguyen Anh Tuan",
+        role: "normal",
+    },
+    {
+        account: "tuanna214112@st.uel.edu.vn",
+        password: "anhtuan716",
+        name: "Nguyen Anh Tuan",
+        role: "admin",
+    }
+
+]
 
 export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner1.jpeg'},
