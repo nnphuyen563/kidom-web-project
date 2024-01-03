@@ -1,19 +1,22 @@
 
 body {
     font-family: myFontSub !important; 
-
 }
 .add-to-cart{
-    background-color: #328320 !important;
+    background-color: #328320;
     color: #ffffff;
     border-radius: 10px;
     height: 50px;
     width: 100%;
+    transition: background-color 0.3s, color 0.3s;
 }
-
+.add-to-cart:hover{
+    background-color: #F52A41;
+    color: #ffffff;
+}
 /* CSS tùy chỉnh cho button "Mua ngay" */
 .buy-now {
-    background-color: #0D5D9C !important;
+    background-color: #0D5D9C;
     color: #ffffff;
     border-radius: 10px;
     height: 50px;
@@ -61,21 +64,25 @@ body {
     justify-content: center;
     height: 100%; /* Đảm bảo chiều cao của thumbnail là 100% */
 }
-
-
-
-/*----------------------------------*/
-.table th {
-    padding-left: 15px;
-  }
-
-  /* Kích thước font và màu sắc cho thẻ th và td trong table */
-.table th, .table td {
-    font-size: 16px;
+.product-img img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 10px;
+}
+/* Chọn nội dung của tab "Mô tả sản phẩm" */
+.product-details-tab-desc, .tab-pane {
+    /* Màu chữ trong nội dung tab */
     color: #333;
-  }
-
- 
+    /* Màu nền của nội dung tab */
+    background-color: #f8f8f8;
+    /* Thêm padding và margin để định dạng nội dung */
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Bổ sung đường viền nếu cần thiết */
+    border-radius: 10px;
+}
+/*----------------------------------*/
 .user-review img{
     width: 60px;
     padding-right: 15px;
@@ -86,25 +93,6 @@ body {
 
 /*-----------------------*/
 /*sản phẩm liên quan*/
-.info h5, h6 {
-    height: 70%; /* Chiều cao cố định cho info */
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-
-    text-align: center;
-    font-size: 14px; 
-}
-
-.info a {
-    text-decoration: none; /* Loại bỏ gạch chân cho tên sản phẩm */ 
-    color: #0D5D9C; /* Màu chữ cho tên sản phẩm */
-}
-
-.info b {
-    color: #ff0000; /* Màu chữ cho giá tiền */
-    font-size: 16px;
-}
 
 .relative-product {
     font-weight: bold;
@@ -112,6 +100,14 @@ body {
     font-size: 20px;
     color: #0D5D9C;
 }
-.info h5 { /*cho chiều cao tên sản phẩm liên quan bằng nhau để giá các sản phẩm ngang hàng nhau*/
-    height: 50px;
+
+/* Thêm hiệu ứng transition cho ảnh */
+.card {
+    transition: transform 0.3s ease-in-out;
 }
+    
+/* Áp dụng hiệu ứng zoom khi di chuột qua ảnh */
+.card:hover {
+    transform: scale(1.05);
+}
+    

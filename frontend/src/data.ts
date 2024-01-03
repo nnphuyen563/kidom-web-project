@@ -1,10 +1,27 @@
 import { Banner } from "./app/shared/models/Banner";
 import { Product } from "./app/shared/models/Product";
 import { Catagory } from "./app/shared/models/Catagory";
+import { User } from "./app/shared/models/User";
 
 const bannerPath = 'assets/img/banner/';
 const productPath = 'assets/img/product/'
 const catagoryPath ='assets/img/catagory/'
+
+export const USERS: User[] = [
+    {
+        account: "tuanna21411@st.uel.edu.vn",
+        password: "anhtuan716",
+        name: "Nguyen Anh Tuan",
+        role: "normal",
+    },
+    {
+        account: "tuanna214112@st.uel.edu.vn",
+        password: "anhtuan716",
+        name: "Nguyen Anh Tuan",
+        role: "admin",
+    }
+
+]
 
 export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner1.jpeg'},
@@ -47,7 +64,7 @@ export const PRODUCTS: Product[] = [
         imageUrl: productPath + '1_thumb.png',
         name: "Hộp màu",
         category: 'Mỹ thuật',
-        price: 199.000,
+        price: 199.999,
         id: 1,
         description: 'Description of product 1',
         star: 3,
@@ -60,7 +77,7 @@ export const PRODUCTS: Product[] = [
         name: "Hộp màu 1",
         category: 'Mỹ thuật',
         price: 129.000,
-        id: 12,
+        id: 1,
         description: 'Description of product 1',
         star: 4,
         stock: 50,
@@ -72,7 +89,7 @@ export const PRODUCTS: Product[] = [
         name: "Hộp màu 2",
         category: 'Mỹ thuật',
         price: 149.000,
-        id: 15,
+        id: 1,
         description: 'Description of product 1',
         star: 2,
         stock: 50,
@@ -84,7 +101,7 @@ export const PRODUCTS: Product[] = [
         name: "Hộp màu 3",
         category: 'Mỹ thuật',
         price: 159.000,
-        id: 16,
+        id: 1,
         description: 'Description of product 1',
         star: 4,
         stock: 50,
@@ -96,7 +113,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Con bo',
         price: 199.999,
-        id: 2,
+        id: 1,
         description: 'Description of product 2',
         star: 3.5,
         stock: 50,
@@ -108,7 +125,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Xe do choi',
         price: 199.999,
-        id: 3,
+        id: 1,
         description: 'Description of product 3',
         star: 4.2,
         stock: 50,
@@ -118,9 +135,9 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1d.jpg',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Xe do choi',
         price: 199.999,
-        id: 4,
+        id: 1,
         description: 'Description of product 4',
         star: 4.8,
         stock: 50,
@@ -133,7 +150,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 5,
+        id: 1,
         description: 'Description of product 5',
         star: 4.1,
         stock: 50,
@@ -241,7 +258,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 9,
+        id: 12,
         description: 'Description of product 12a',
         star: 3.9,
         stock: 50,
@@ -251,9 +268,9 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '19_thumb.png',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Hóa trang',
         price: 199.999,
-        id: 10,
+        id: 19,
         description: 'Description of product 19a',
         star: 4.8,
         stock: 50,
@@ -265,7 +282,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 10,
+        id: 19,
         description: 'Description of product 19b',
         star: 4.4,
         stock: 50,
@@ -277,7 +294,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 10,
+        id: 19,
         description: 'Description of product 19c',
         star: 4.6,
         stock: 50,
@@ -289,7 +306,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 11,
+        id: 20,
         description: 'Description of product 20a',
         star: 4.2,
         stock: 50,
@@ -301,7 +318,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 11,
+        id: 20,
         description: 'Description of product 20b',
         star: 4.7,
         stock: 50,
@@ -313,7 +330,7 @@ export const PRODUCTS: Product[] = [
         name: "Toy's name",
         category: 'Toy',
         price: 199.999,
-        id: 11,
+        id: 20,
         description: 'Description of product 20c',
         star: 4.1,
         stock: 50,

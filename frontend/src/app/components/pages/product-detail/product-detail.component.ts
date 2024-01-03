@@ -18,39 +18,29 @@ import { Item } from '../../../../item';
 export class ProductDetailComponent implements OnInit {
     products: Product[] = [];
     catagorys: Catagory[] =[];
+    categoryName: string = '';
     thumbnail: Product = new Product();
     quantity: number=1;
     relatedProducts: Product[] = [];
+
   constructor(
-    private productServices: ProductService,
+    private productService: ProductService,
     private activatedRoute: ActivatedRoute,
-    private catagoryServices: CatagoryService,
+    private catagoryService: CatagoryService,
     private route: ActivatedRoute,
     private cartService: CartService,
     private router: Router,
+
   ) {
-    
     route.queryParams.subscribe(params => {
-      this.products = productServices.getDetail(params['id']);
-      this.thumbnail = productServices.getProductThumbnail(params['id']);
+      this.products = productService.getDetail(params['id']);
+      this.thumbnail = productService.getProductThumbnail(params['id']);
+      console.log(this.products);
     });
-
-    this.products = productServices.getThumbnail();
-    this.catagorys= catagoryServices.getAll();
-
-    this.activatedRoute.params.subscribe((params) => {
-      if (params.searchTerm) {
-        this.products = this.productServices.getAllProductsBySearchTerm(params.searchTerm);
-      } else {
-        this.products = productServices.getThumbnail();
-      }
-      if (params.id) {
-        this.thumbnail = this.productServices.getProductThumbnail(params.id);
-        this.products = this.productServices.getDetail(params.id);
-    }
-    });
-    
+    this.catagorys= catagoryService.getAll(); 
+    // this.relatedProducts = productService.getAll();
   }
+
 //chọn số lượng
   increase(){
     this.quantity +=1;
@@ -60,17 +50,17 @@ export class ProductDetailComponent implements OnInit {
         this.quantity -=1;
     }
   }
-  handleChange(event: any) {
-    // Xử lý sự kiện khi giá trị thay đổi
+  handleChange(event: any) { // Xử lý sự kiện khi giá trị thay đổi
     console.log('Quantity changed:', this.quantity);
   }
+//------------------------------------------------
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const productId = params['id'];
       // Gọi phương thức hoặc service để lấy sản phẩm chi tiết (this.productServices.getDetail(productId))
       // Sau đó, gọi phương thức hoặc service để lấy các sản phẩm cùng danh mục
-      this.relatedProducts = this.productServices.getProductsByCategory(this.thumbnail.category);
+      this.relatedProducts = this.productService.getProductsByCategory(this.thumbnail.category);
   });
   }
 
@@ -81,17 +71,17 @@ export class ProductDetailComponent implements OnInit {
     this.products = this.products.slice(0, index).concat(this.products.slice(index + 1));
     this.products.push(temp);
   }
+
+
+
   // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
-  // addToCart(product: Item) {
-  //   this.cartService.addToCart(product);
-  // }
-  addToCart(thumbnail: any) {
-    this.addToCart(thumbnail);
+  addToCart(thumbnail: Item) {
+    this.cartService.addToCart(this.thumbnail);
   }
-  buyNow(thumbnail: any) {
-    // Thêm vào giỏ hàng
-    this.addToCart(thumbnail);
+  buyNow(thumbnail: Item) {
+    this.cartService.addToCart(this.thumbnail);
     //Chuyển qua cart
     this.router.navigate(['/cart']);
   }
+
 }
