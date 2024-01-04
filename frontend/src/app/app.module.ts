@@ -13,6 +13,7 @@ import { SignupComponent } from './components/pages/signup/signup.component';
 import { ForgotPassComponent } from './components/pages/forgot-pass/forgot-pass.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { AccountComponent } from './components/pages/account/account.component';
+import { PartialsAccountComponent} from './components/partials/account/account.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { BlogDetailComponent } from './components/pages/blog-detail/blog-detail.component';
 import { CartComponent } from './components/pages/cart/cart.component';
@@ -30,7 +31,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleriaModule } from 'primeng/galleria';
-import { IndexComponent } from './components/partials/index/index.component'; 
+import { IndexComponent } from './components/partials/index/index.component';
+import { NavComponent } from './components/partials/nav/nav.component'; 
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { IndexComponent } from './components/partials/index/index.component';
     PolicyComponent,
     TitleComponent,
     IndexComponent,
+    NavComponent,
+    PartialsAccountComponent,
   ],
   imports: [
     BrowserModule,
