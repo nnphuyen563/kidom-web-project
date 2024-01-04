@@ -66,6 +66,13 @@ export class DesignByYouComponent implements OnInit{
       "assets/img/animals/monkey.png";
       this.id = -3;
   }
+
+  loadJsFunc() {
+    this.onLoadfunc();
+    this.onBtnClick();
+    this.changeName();
+  }
+
   onLoadfunc() {
     new addAcc();
   }
@@ -83,6 +90,8 @@ export class DesignByYouComponent implements OnInit{
     ){
       config.backdrop = 'static';
 		  config.keyboard = false;
+
+      this.loadJsFunc();
     }
 
   ngAfterViewInit(){

@@ -78,6 +78,7 @@ function addName(){
             var userInput = $(this).val().substring(0, 5); // Limit to 5 characters
             $("#userText").text(userInput);
         });
+
         $(document).on("mousedown", "#userText", function(e) {
                     
             var cardLeft = $(".card").offset().left;    
