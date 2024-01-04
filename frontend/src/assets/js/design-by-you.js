@@ -24,7 +24,7 @@ function addAcc() {
             });
     
             // Append the accessory image to the body
-            $("body").append(accessoryImg);
+            $("body.mat-typography").append(accessoryImg);
         });
     
         // Allow adjusting position by clicking and dragging the accessory image
@@ -40,8 +40,6 @@ function addAcc() {
             $(document).on("mousemove", function(ev) {
                 var newY = ev.clientY - imgHeight/2;
                 var newX = ev.clientX - imgWidth/2;
-                
-                console.log($(".card").offset().right , newX)
     
                 if (newX < cardLeft) {
                     newX = cardLeft;
