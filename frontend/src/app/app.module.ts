@@ -29,7 +29,8 @@ import { TitleComponent } from './components/partials/title/title.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GalleriaModule } from 'primeng/galleria'; 
+import { GalleriaModule } from 'primeng/galleria';
+import { IndexComponent } from './components/partials/index/index.component'; 
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { GalleriaModule } from 'primeng/galleria';
     FaqComponent,
     PolicyComponent,
     TitleComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,26 +12,34 @@ import { PolicyComponent } from './components/pages/policy/policy.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
+import { IndexComponent } from './components/partials/index/index.component';
 
 
 const routes: Routes = [
-  {path: '', component:HomeComponent},
-  {path: 'productDetail/:productName', component:ProductDetailComponent},
-  {path: 'login', component:LoginComponent},
-  {path: 'signup', component:SignupComponent},
-  {path: 'forget-pass', component:ForgotPassComponent},
-  {path: 'search/:searchTerm', component:HomeComponent},
-  {path: 'productDetail/:productId', component:ProductDetailComponent},
-  {path: 'account', component:AccountComponent},
-  {path: 'catagory/:catagoryName', component: CategoryComponent},
-  {path: 'search/:searchTerm', component:HomeComponent},
-  {path: 'faq', component:FaqComponent},
-  {path: 'policy', component:PolicyComponent},
-  {path: 'blog', component:BlogComponent},
-  {path: 'aboutus', component: AboutUsComponent},
-  {path: 'search/:searchTerm', component:HomeComponent},
-  {path: 'aboutus', component: AboutUsComponent},
-  {path: 'cart', component: CartComponent}
+  {
+    path: '', component:IndexComponent,
+    children: [
+      {path: '', component:HomeComponent},
+      {path: 'productDetail/:productName', component:ProductDetailComponent},
+      {path: 'login', component:LoginComponent},
+      {path: 'signup', component:SignupComponent},
+      {path: 'forget-pass', component:ForgotPassComponent},
+      {path: 'search/:searchTerm', component:HomeComponent},
+      {path: 'productDetail/:productId', component:ProductDetailComponent},
+      {path: 'account', component:AccountComponent},
+      {path: 'catagory/:catagoryName', component: CategoryComponent},
+      {path: 'search/:searchTerm', component:HomeComponent},
+      {path: 'faq', component:FaqComponent},
+      {path: 'policy', component:PolicyComponent},
+      {path: 'blog', component:BlogComponent},
+      {path: 'aboutus', component: AboutUsComponent},
+      {path: 'search/:searchTerm', component:HomeComponent},
+      {path: 'aboutus', component: AboutUsComponent},
+      {path: 'cart', component: CartComponent},
+    ]
+  },
+  {path: 'design-by-you', component: DesignByYouComponent}
 ];
 
 @NgModule({
