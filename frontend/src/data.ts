@@ -1,10 +1,27 @@
 import { Banner } from "./app/shared/models/Banner";
 import { Product } from "./app/shared/models/Product";
 import { Catagory } from "./app/shared/models/Catagory";
+import { User } from "./app/shared/models/User";
 
 const bannerPath = 'assets/img/banner/';
 const productPath = 'assets/img/product/'
 const catagoryPath ='assets/img/catagory/'
+
+export const USERS: User[] = [
+    {
+        account: "tuanna21411@st.uel.edu.vn",
+        password: "anhtuan716",
+        name: "Nguyen Anh Tuan",
+        role: "normal",
+    },
+    {
+        account: "tuanna214112@st.uel.edu.vn",
+        password: "anhtuan716",
+        name: "Nguyen Anh Tuan",
+        role: "admin",
+    }
+
+]
 
 export const BANNERS: Banner[] = [
     {imageUrl: bannerPath + 'banner1.jpeg'},
@@ -47,12 +64,49 @@ export const PRODUCTS: Product[] = [
         imageUrl: productPath + '1_thumb.png',
         name: "Hộp màu",
         category: 'Mỹ thuật',
-        price: 199.000,
+        price: 199.999,
         id: 1,
+        description: 'Description of product 1',
+        star: 3,
+        stock: 50,
+        time: new Date(),
+        quantity: 10
+    },
+    {
+        imageUrl: productPath + '1_thumb.png',
+        name: "Hộp màu 1",
+        category: 'Mỹ thuật',
+        price: 129.000,
+        id: 12,
         description: 'Description of product 1',
         star: 4,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
+    },
+    {
+        imageUrl: productPath + '1_thumb.png',
+        name: "Hộp màu 2",
+        category: 'Mỹ thuật',
+        price: 149.000,
+        id: 15,
+        description: 'Description of product 1',
+        star: 2,
+        stock: 50,
+        time: new Date(),
+        quantity: 10
+    },
+    {
+        imageUrl: productPath + '1_thumb.png',
+        name: "Hộp màu 3",
+        category: 'Mỹ thuật',
+        price: 159.000,
+        id: 16,
+        description: 'Description of product 1',
+        star: 4,
+        stock: 50,
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '1b.jpg',
@@ -63,7 +117,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 2',
         star: 3.5,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '1c.png',
@@ -74,7 +129,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 3',
         star: 4.2,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '1d.jpg',
@@ -85,7 +141,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 4',
         star: 4.8,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
 
     },
     {
@@ -97,7 +154,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 5',
         star: 4.1,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '1f.png',
@@ -108,7 +166,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 1f',
         star: 4.0,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '2_thumb.png',
@@ -119,7 +178,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 2a',
         star: 3.8,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '3_thumb.jpg',
@@ -130,7 +190,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 3a',
         star: 4.5,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '4_thumb.jpg',
@@ -141,7 +202,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 4a',
         star: 4.2,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '5_thumb.png',
@@ -152,7 +214,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 5a',
         star: 4.7,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '6_thumb.png',
@@ -163,7 +226,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 6a',
         star: 4.1,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '7_thumb.png',
@@ -174,7 +238,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 7a',
         star: 4.6,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '8_thumb.jpg',
@@ -185,7 +250,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 8a',
         star: 4.3,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '12_thumb.png',
@@ -196,7 +262,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 12a',
         star: 3.9,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '19_thumb.png',
@@ -207,7 +274,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 19a',
         star: 4.8,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '19b.png',
@@ -218,7 +286,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 19b',
         star: 4.4,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '19c.png',
@@ -229,7 +298,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 19c',
         star: 4.6,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '20_thumb.png',
@@ -240,7 +310,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 20a',
         star: 4.2,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '20b.png',
@@ -251,7 +322,8 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 20b',
         star: 4.7,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
     {
         imageUrl: productPath + '20c.jpg',
@@ -262,6 +334,7 @@ export const PRODUCTS: Product[] = [
         description: 'Description of product 20c',
         star: 4.1,
         stock: 50,
-        time: new Date()
+        time: new Date(),
+        quantity: 10
     },
 ];

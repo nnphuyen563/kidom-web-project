@@ -5,6 +5,7 @@ import com.kidom.backend.dto.UserDto;
 import com.kidom.backend.entity.User;
 import com.kidom.backend.enums.UserRole;
 import com.kidom.backend.repository.UserRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -30,5 +31,16 @@ public class AuthServiceImpl implements AuthService{
     public Boolean hasUserWithEmail(String email) {
         return userRepository.findFirstByEmail(email).isPresent();
     }
-
+    @PostConstruct
+    public void createAdminAccount() {
+        User adminAccount =userRepository.findByRole(UserRole.ADMIN);
+        if (null == adminAccount) {
+            User user = new User();
+            user.setEmail("admin@kidom.com");
+            user.setName("admin");
+            user.setRole(UserRole.ADMIN);
+            user.setPassword("admin123");
+            userRepository.save(user);
+        }
+    }
 }
