@@ -4,9 +4,7 @@
         <div class="row deliveryline">
 
             <div class="col-3 d-flex align-items-center">
-                <img class="deliveryimg"
-                    src="../assets/img/delivery/delivery.png" alt
-                    routerLink="/aboutus">
+                <img class="deliveryimg" src="../assets/img/delivery/delivery.png" alt="">  
                 <p class="d-flex deliverytext">Miễn phí cho đơn hàng trên 150k</p>
             </div>
             <div class="col-3 d-flex align-items-center">
@@ -57,7 +55,7 @@
     </div>
     <!-- hết banner -->
     <!-- catagory -->
-    <div class="container">
+    <div class="container divcategory">
         <div class="row p-3">
             <div class="col-4 col-lg-2 text-center"
                 *ngFor="let catagory of catagorys">
@@ -65,7 +63,7 @@
                     class="text-decoration-none">
                     <img [src]="catagory.imageUrl" alt class="cat">
                     <div class="card-title text-black">
-                        <h5 class="card-title text-center mt-2 categoryname">{{catagory.name}}</h5>
+                        <h3 class="card-title text-center mt-2 categoryname">{{catagory.name}}</h3>
                     </div>
                 </a>
             </div>
@@ -85,7 +83,7 @@
                 </div>
                 <div
                     class="position-absolute top-50 start-50 translate-middle text-black">
-                    <h3 class="texttieude">Sản phẩm mới</h3>
+                    <h1 class="texttieude">Sản phẩm mới</h1>
                 </div>
             </div>
             <!-- san pham moi row1 -->
@@ -99,10 +97,9 @@
                             <img [src]="product.imageUrl" class="card-img" alt
                                 id="hinh{{i + 1}}">
                             <div class="p-2">
-                                <h6 class="text-black-50 p-2">{{product.category}}</h6>
-                                <h5 class="card-title text-center mt-2">{{product.name}}</h5>
-                                <h6 class="card-text text-center price mb-1">{{product.price}}
-                                    VND</h6>
+                                <h5 class="text-black-50 p-2">{{product.category}}</h5>
+                                <h3 class="card-title text-center mt-2">{{product.name}}</h3>
+                                <h3 class="card-text text-center price mb-1">{{product.price}} VND</h3>
                                 <div class="d-flex align-items-center flex-wrap">
                                     <div
                                         class="stars mr-auto align-items-center">
@@ -118,7 +115,7 @@
                         </div>
 
                     </a>
-                    <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                    <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
 
                 </div>
             </div>
@@ -132,7 +129,7 @@
                 </div>
                 <div
                     class="position-absolute top-50 start-50 translate-middle text-black">
-                    <h3 class="texttieude">Thông tin mới nhất</h3>
+                    <h1 class="texttieude">Thông tin mới nhất</h1>
                 </div>
             </div>
             <div class="row mt-3">
