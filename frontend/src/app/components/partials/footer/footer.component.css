@@ -3,18 +3,27 @@ body {
     color: #ffffff !important;
     font-family: myFontSub !important;
     font-size: 14px;
+    background-color: #0D5D9C;
+}
+/*     Cột 1     */
+.img-container img {
+    width: 70%;
+}
+
+
+/*     Cột 2     */
+.right-column h5{
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .container h5, ul {
     color: #ffffff !important;
 }
-.front .social img { /*kích thước 3 ảnh social*/
-    width: 60px;
+/*     3 ảnh social     */
+.right-column .social img { 
+    width: 30%;
 }
-.front img {
-    width: 100%;   
-}
-
 .subscribe {
     background-color: #F52A41 !important;
     color: #ffffff !important;
@@ -42,37 +51,12 @@ body {
 .list-unstyled li {
     margin-bottom: 10px; /* chỉnh khoảng cách giữa các thẻ li */
 }
-.img-container {
-    position: relative;
-    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
-  }
 
-
-/* .above-text {
-    position: absolute;
-    top: 95%; 
-    left: 35%;
-    transform: translate(-50%, -50%);
-    color: white; 
-} */
-
-.overlay-text {
-    position: absolute;
-    top: 95%; /*Căn trên của hình ảnh*/
-    left: 35%;
-
-    transform: translate(-50%, -50%);
-    color: white; /* Màu chữ */
-}
-.inf {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items:first baseline; /* Căn giữa theo chiều dọc */
-}
-
-.img-container, .right-column {
-    flex: 1; /* Phần tử chiếm toàn bộ khoảng trống còn lại */
-}
 .form-control {
     border-radius: 15px !important;
+}
+@media (max-width: 999px) {
+    .right-column {
+        margin-bottom: 30px;
+    }
 }

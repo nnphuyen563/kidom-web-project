@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../item';
 import { BehaviorSubject } from 'rxjs';
+import { Product } from '../shared/models/Product';
+import { PRODUCTS } from '../../data';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,9 @@ export class CartService {
     }
   }
 
-  addToCart(item: Item) {
+  addToCart(item: Item, alert: Boolean = true) {
+    this.loadCartItemsFromLocalStorage();
+
     const existingItemIndex = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
 
     if (existingItemIndex !== -1) {
@@ -42,7 +46,10 @@ export class CartService {
         this.cartItems.push({ ...item, quantity: 1 }); // Thêm vào giỏ hàng với số lượng là 1
       }
     }
-    this.showSuccessToast("Thêm vào giỏ hàng thành công")
+    if (alert) {
+      this.showSuccessToast("Thêm vào giỏ hàng thành công")
+    }
+
     this.updateLocalStorage(); 
   }
 

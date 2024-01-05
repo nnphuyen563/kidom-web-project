@@ -1,39 +1,87 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../../../services/cart.service';
+import { CatagoryService } from '../../../services/catagory.service';
 import { ProductService } from '../../../services/product.service';
+import { Catagory } from '../../../shared/models/Catagory';
 import { Product } from '../../../shared/models/Product';
+// import { faStar} from '@fortawesome/free-solid-svg-icons';
+import { Item } from '../../../../item';
+
 
 @Component({
-  selector: 'app-product-detail',
-  templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.css',
-})
-export class ProductDetailComponent {
-  products: Product[] = [];
-  thumbnail: Product = new Product();
+    selector: 'app-product-detail',
+    templateUrl: './product-detail.component.html',
+    styleUrls: ['./product-detail.component.css'],
+  
+  })
+export class ProductDetailComponent implements OnInit {
+    products: Product[] = [];
+    catagorys: Catagory[] =[];
+    categoryName: string = '';
+    thumbnail: Product = new Product();
+    quantity: number=1;
+    relatedProducts: Product[] = [];
 
   constructor(
     private productService: ProductService,
+    private activatedRoute: ActivatedRoute,
+    private catagoryService: CatagoryService,
     private route: ActivatedRoute,
-    activatedRoute: ActivatedRoute
+    private cartService: CartService,
+    private router: Router,
+
   ) {
-    // activatedRoute.params.subscribe((params) =>{
-    //   if(params.id)
-    //   // this.products = productService.getProductById(params.id);
-    // })
-    route.queryParams.subscribe((params) => {
+    route.queryParams.subscribe(params => {
       this.products = productService.getDetail(params['id']);
       this.thumbnail = productService.getProductThumbnail(params['id']);
+      console.log(this.products);
     });
+    this.catagorys= catagoryService.getAll(); 
+    // this.relatedProducts = productService.getAll();
+  }
+
+//chọn số lượng
+  increase(){
+    this.quantity +=1;
+  }
+  decrease(){
+    if (this.quantity > 1){
+        this.quantity -=1;
+    }
+  }
+  handleChange(event: any) { // Xử lý sự kiện khi giá trị thay đổi
+    console.log('Quantity changed:', this.quantity);
+  }
+//------------------------------------------------
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      const productId = params['id'];
+      // Gọi phương thức hoặc service để lấy sản phẩm chi tiết (this.productServices.getDetail(productId))
+      // Sau đó, gọi phương thức hoặc service để lấy các sản phẩm cùng danh mục
+      this.relatedProducts = this.productService.getProductsByCategory(this.thumbnail.category);
+  });
   }
 
   changeThumbnail(index: number): void {
     let temp = this.thumbnail;
 
     this.thumbnail = this.products[index];
-    this.products = this.products
-      .slice(0, index)
-      .concat(this.products.slice(index + 1));
+    this.products = this.products.slice(0, index).concat(this.products.slice(index + 1));
     this.products.push(temp);
   }
+
+
+
+  // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
+  addToCart(thumbnail: Item) {
+    this.cartService.addToCart(this.thumbnail);
+  }
+  buyNow(thumbnail: Item) {
+    this.cartService.addToCart(this.thumbnail);
+    //Chuyển qua cart
+    this.router.navigate(['/cart']);
+  }
+
 }

@@ -51,3 +51,4 @@ export class HomeComponent {
     this.cartService.addToCart(product);
   }
 }
+

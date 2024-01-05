@@ -44,6 +44,7 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { PolicyComponent } from './components/pages/policy/policy.component';
 import { ProductDetailComponent } from './components/pages/product-detail/product-detail.component';
 import { SignupComponent } from './components/pages/signup/signup.component';
+import { PartialsAccountComponent } from './components/partials/account/account.component';
 import { CategoryComponent } from './components/partials/category/category.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { HeaderComponent } from './components/partials/header/header.component';
@@ -51,6 +52,12 @@ import { MenuComponent } from './components/partials/menu/menu.component';
 import { SearchComponent } from './components/partials/search/search.component';
 import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
 import { TitleComponent } from './components/partials/title/title.component';
+// import { TabViewModule } from 'primeng/tabview';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { GalleriaModule } from 'primeng/galleria';
+import { IndexComponent } from './components/partials/index/index.component';
+import { NavComponent } from './components/partials/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +85,9 @@ import { TitleComponent } from './components/partials/title/title.component';
     TitleComponent,
     ProductAdminComponent,
     AccountAdminComponent,
+    IndexComponent,
+    NavComponent,
+    PartialsAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,6 +118,9 @@ import { TitleComponent } from './components/partials/title/title.component';
     MultiSelectModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatTabsModule,
+    MatIconModule,
+    GalleriaModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
