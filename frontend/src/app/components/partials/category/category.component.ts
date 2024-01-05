@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../../../services/product.service'; 
-import { Product } from '../../../shared/models/Product';
-import { CartService } from '../../../services/cart.service';
 import { Item } from '../../../../item';
+import { CartService } from '../../../services/cart.service';
+import { ProductService } from '../../../services/product.service';
+import { Product } from '../../../shared/models/Product';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
   categoryName: string = '';
@@ -21,11 +21,12 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       this.categoryName = params.get('catagoryName') ?? '';
-      this.products = this.productService.getProductsByCategory(this.categoryName);
+      this.products = this.productService.getProductsByCategory(
+        this.categoryName
+      );
       console.log(this.products);
-
     });
   }
 
