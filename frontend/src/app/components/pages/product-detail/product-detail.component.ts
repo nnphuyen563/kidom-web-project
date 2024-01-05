@@ -12,7 +12,11 @@ import { ProductService } from '../../../services/product.service';
 export class ProductDetailComponent {
   products: Product[] = [];
   thumbnail: Product = new Product;
+  isClicked: boolean = false;
 
+  toggleHeart() {
+    this.isClicked = !this.isClicked;
+  }
   constructor(private productService:ProductService , 
     private route:ActivatedRoute,
     activatedRoute: ActivatedRoute) {

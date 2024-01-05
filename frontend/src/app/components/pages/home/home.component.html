@@ -51,7 +51,7 @@
     <!-- catagory -->
     <div class="container">
         <div class="row p-3">
-            <div class="col-4 col-lg-2 text-center"
+            <div class="col-6 col-md-4 col-lg-2 text-center"
                 *ngFor="let catagory of catagorys">
                 <a routerLink="catagory/{{catagory.name}}"
                     class="text-decoration-none">
@@ -97,11 +97,11 @@
                                     VND</h6>
                                 <div class="d-flex align-items-center flex-wrap">
                                     <div
-                                        class="stars mr-auto align-items-center">
+                                        class="stars mr-auto align-items-center linestar">
                                         <app-star-rating [stars]="product.star" />
                                     </div>
                                     <div class="mt-2 ml">
-                                        <span class="card-title"> Có sẵn:
+                                        <span class="card-title stock"> Có sẵn:
                                             {{product.stock}}</span>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                         </div>
 
                     </a>
-                    <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</a>
+                    <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
 
                 </div>
             </div>

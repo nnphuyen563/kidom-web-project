@@ -65,20 +65,24 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <button type="button" class="btn add-to-cart w-100">Thêm vào giỏ hàng</button>
+                                <button type="button" class="btn add-to-cart w-100 btntext">Thêm vào giỏ hàng</button>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <button type="button" class="btn buy-now w-100">Mua ngay</button>
+                                <button type="button" class="btn buy-now w-100 btntext">Mua ngay</button>
                             </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-md-6 mb-3">
+                                <a class="btn btn-light border border-secondary py-2 icon-hover px-3 btn-heart"
+                                   (click)="toggleHeart()" 
+                                   [ngClass]="{'clicked': isClicked}"> 
+                                  <i class="me-1 fa fa-heart fa-lg"></i> Save
+                                </a>
+                              </div>
                         </div>
                     </div>
                     
-                
-                
-                    <br>
-                    <a href="#" class="btn btn-light border border-secondary py-2 icon-hover px-3"> 
-                        <i class="me-1 fa fa-heart fa-lg"></i> Save </a> <!--thêm vào yêu thích-->
-
+                    
                 </main>
           </div>
         </div>

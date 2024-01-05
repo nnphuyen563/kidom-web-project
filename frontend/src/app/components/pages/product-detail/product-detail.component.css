@@ -12,6 +12,7 @@ body {
 .buy-now {
     background-color: #0D5D9C !important;
     color: #ffffff;
+    border-radius: 10px;
 }
 .price {
 
@@ -48,4 +49,20 @@ body {
 }
 .info h5 { /*cho chiều cao tên sản phẩm liên quan bằng nhau để giá các sản phẩm ngang hàng nhau*/
     height: 50px;
+}
+
+.btn-heart {
+    color: #000; /* Default color for the heart icon */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+.clicked {
+    color: red; /* Color when the button is clicked */
+}
+
+@media (max-width: 992px) {
+    .btntext {
+        font-size: 14px;
+        padding: 6px 6px;
+}
 }
