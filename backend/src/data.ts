@@ -51,8 +51,6 @@ export const USER: User[] = [
         name: "Nguyen Anh Tuan",
         isAdmin: false,
         phone: "0123456789",
-        address: "HCM",
-        token: ''
     },
     {
         email: "admin@gmail.com",
@@ -60,7 +58,5 @@ export const USER: User[] = [
         name: "Nguyen Anh Tuan",
         isAdmin: true,
         phone: "0123456789",
-        address: "HCM",
-        token: ''
     }
 ]

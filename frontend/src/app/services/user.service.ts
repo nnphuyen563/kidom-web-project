@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
-import { USER_LOGIN_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL, USER_REGISETER_URL } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
+import { IUserRegister } from '../shared/interfaces/IUserRegister';
 
 const USER_KEY = 'User';
 @Injectable({
@@ -24,17 +25,45 @@ export class UserService {
         next: (user) => {
           this.setUserToLocalStorage(user);
           this.userSubject.next(user);
+
+          if (user.isAdmin) {
+            this.toastrService.success(
+              `Chào mừng admin trở lại!`,
+              'Đăng nhập thành công'
+            );
+            
+            return;
+          }
+
           this.toastrService.success(
-            `Welcome to Kidom ${user.name}`,
-            'Login Successful'
+            `Chào bạn ${user.name} tới Kidom`,
+            'Đăng nhập thành công'
           );
         },
         error: (errorRes) => {
-          this.toastrService.error(errorRes.error, 'Login Failed');
+          this.toastrService.error(errorRes.error, 'Đăng nhập thất bại');
         }
       })
     );
   } 
+
+  register(userRegister: IUserRegister): Observable<User> {
+    return this.http.post<User>(USER_REGISETER_URL, userRegister).pipe(
+      tap({
+        next: (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Chào bạn ${user.name} tới Kidom`,
+            'Đăng ký thành công'
+          );
+        },
+        error: (errorRes) => {
+          this.toastrService.error(errorRes.error, 'Đăng ký thất bại');
+        }
+      })
+    );
+  }
 
   logout() {
     this.userSubject.next(new User());
@@ -43,7 +72,7 @@ export class UserService {
   }
 
   private setUserToLocalStorage(user: User) {
-    localStorage.setItem(USER_KEY, JSON.stringify(User));
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
   private getUserFromLocalStorage(): User {

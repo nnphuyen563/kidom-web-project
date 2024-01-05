@@ -14,6 +14,7 @@ import { AboutUsComponent } from './components/pages/about-us/about-us.component
 import { CartComponent } from './components/pages/cart/cart.component';
 import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
 import { IndexComponent } from './components/partials/index/index.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
       {path: 'cart', component: CartComponent},
     ]
   },
-  {path: 'design-by-you', component: DesignByYouComponent}
+  {path: 'design-by-you', component: DesignByYouComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({

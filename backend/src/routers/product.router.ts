@@ -50,7 +50,7 @@ router.get("/search/:searchTerm", asyncHandler(
         const data = await ProcductModel.find(
             {name: {$regex: searchRegex}}
         );
-        
+
         const products = getAll(data).filter(product => product.imageUrl.includes('_thumb.'));
         res.send(products);
     }

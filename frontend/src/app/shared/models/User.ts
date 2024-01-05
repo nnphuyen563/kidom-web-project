@@ -4,6 +4,5 @@ export class User {
     name!: string;
     isAdmin!: boolean;
     phone!: string;
-    address?: string;
     token!: string;
 }

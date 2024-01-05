@@ -33,6 +33,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { IndexComponent } from './components/partials/index/index.component'; 
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ToastrModule } from 'ngx-toastr';
     PolicyComponent,
     TitleComponent,
     IndexComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

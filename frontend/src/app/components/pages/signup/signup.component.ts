@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../../services/user.service';
+import { PasswordsMatchValidator } from '../../../shared/validators/password_match_validator';
+import { IUserRegister } from '../../../shared/interfaces/IUserRegister';
 
 @Component({
   selector: 'app-signup',
@@ -10,8 +13,13 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit{
   SignupForm!:FormGroup;
   isSubmitted = false;
-  Router: any;
-  constructor(private formBuilder:FormBuilder, private router: Router) { }
+
+  constructor(
+    private formBuilder:FormBuilder, 
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService
+    ) { }
 
   ngOnInit(): void {
     this.SignupForm = this.formBuilder.group({
@@ -19,8 +27,11 @@ export class SignupComponent implements OnInit{
       password:['', Validators.required],
       phonenumber:['', Validators.required],
       name:['', Validators.required],
-      password2:['', Validators.required],
-    }); 
+      confirmPassword:['', Validators.required],
+    }, {
+      validators: PasswordsMatchValidator('password', 'confirmPassword')
+    }
+    ); 
   }
 
   get fc() {
@@ -29,12 +40,31 @@ export class SignupComponent implements OnInit{
 
   submit(){
     this.isSubmitted = true;
+
+    if (this.SignupForm.invalid) {
+      console.log("AAAAA");
+      return;
+    }
+
+    // alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value} 
+    // Mời bạn đăng nhập lại`);
     
-    if (this.SignupForm.invalid) return;
-    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}
-    Mời bạn đăng nhập lại`);
+    const fv = this.SignupForm.value;
+
+    const user:IUserRegister = {
+      name: fv.name,
+      email: fv.email,
+      password: fv.password,
+      confirmedPassword: fv.confirmedPassword,
+      phone: fv.phonenumber
+    }
+
     
-    this.router.navigate(['/login']);
+
+    this.userService.register(user).subscribe(_ => {
+      this.router.navigate(["/"]);
+    })
+
   }
 }
 

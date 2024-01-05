@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../../../shared/models/User';
+import { UserService } from '../../../services/user.service';
 
 
 @Component({
@@ -10,12 +12,16 @@ import { Router } from '@angular/router';
 export class AccountComponent {
   selectedTab: string = 'account-general'; // Mặc định là tab 'account-general'
   clickedTab: string = '';
+  user!: User
 
   selectTab(tab: string) {
     this.selectedTab = tab;
     this.clickedTab = tab;
   }
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
+    })
   }
   
   isAddAddressVisible: boolean = false;

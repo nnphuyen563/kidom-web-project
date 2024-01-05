@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit{
 
   loginForm!:FormGroup;
   isSubmitted = false;
-  returnUrl = ''
 
   constructor(
     private formBuilder:FormBuilder, 
@@ -26,8 +25,6 @@ export class LoginComponent implements OnInit{
       email:['', [Validators.required, Validators.email]],
       password:['', Validators.required],
     });
-
-    this.returnUrl = this.activatedRouter.snapshot.queryParams.returnUrl;
   }
 
   get fc() {
@@ -43,8 +40,12 @@ export class LoginComponent implements OnInit{
     this.userService.login({
       email: this.fc.email.value,
       password: this.fc.password.value
-    }).subscribe(() => {
-      this.router.navigateByUrl(this.returnUrl);
+    }).subscribe((user) => {
+      if (user.isAdmin) {
+        this.router.navigate(["admin"]); 
+        return;
+      }
+      this.router.navigate(["/"]);
     });
   }
 }

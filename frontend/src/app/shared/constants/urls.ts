@@ -13,3 +13,4 @@ export const PRODUCT_BY_ID_URL = PRODUCTS_URL + '/';
 
 export const USER_URL = BASE_URL + '/api/user';
 export const USER_LOGIN_URL = USER_URL + '/login';
+export const USER_REGISETER_URL = USER_URL + '/register'

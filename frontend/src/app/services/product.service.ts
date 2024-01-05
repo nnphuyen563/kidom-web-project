@@ -26,7 +26,6 @@ export class ProductService {
 
   getProductThumbnail(id: string): Observable<Product> {
     return this.http.get<Product>(THUMB_BY_ID_URL + id);
-
   }
 
   getAllProductsBySearchTerm(searchTerm: string){
