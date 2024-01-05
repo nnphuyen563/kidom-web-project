@@ -31,6 +31,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleriaModule } from 'primeng/galleria';
 import { IndexComponent } from './components/partials/index/index.component'; 
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,12 @@ import { IndexComponent } from './components/partials/index/index.component';
     BrowserAnimationsModule, 
     MatIconModule,
     GalleriaModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      newestOnTop: false
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

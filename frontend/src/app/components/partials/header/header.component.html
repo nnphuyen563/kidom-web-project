@@ -18,24 +18,32 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-12 mb-2">
                     <ul class="nav justify-content-center nav-outer mt-2"> 
-                        <li class="nav-item me-3">
-                            <a routerLink="/account">
-                                <i class="fa-solid fa-phone"></i> Tư vấn
-                            </a>
-                        </li>
                         <li class="nav-item me-3"> 
                             <a routerLink="/cart" >
                                 <i class="fa-solid fa-shopping-cart"></i> Giỏ hàng
                             </a>
-                        </li>   
-                        <li class="nav-item">
-                            <a routerLink="/login">
-                                <i class="fa-regular fa-circle-user"></i> Đăng nhập /
+                        </li> 
+                        <li class="nav-item me-3">
+                            <a routerLink="/account">
+                                <i class="fa-solid fa-user" *ngIf="isAuth"></i> 
+                                {{user.name}}
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" *ngIf="!isAuth">
+                            <a routerLink="/login">
+                                <i class="fa-regular fa-circle-user" ></i> 
+                                Đăng nhập /
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="!isAuth">
                             <a routerLink="/signup">
                                 Đăng ký
+                            </a>
+                        </li>
+                        <li class="nav-item me-3" *ngIf="isAuth" (click)="logout()">
+                            <a routerLink="/">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Đăng xuất
                             </a>
                         </li>
                     </ul>

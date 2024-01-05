@@ -1,34 +1,38 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../shared/models/Product';
 import { PRODUCTS } from '../../data';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { PRODUCTS_URL, PRODUCT_BY_CATE_URL, PRODUCT_BY_ID_URL, PRODUCT_BY_SEARCH_URL, THUMB_BY_ID_URL, THUMB_URL } from '../shared/constants/urls';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAll(): Product[] {
-    return PRODUCTS;
+  getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(PRODUCTS_URL);
   }
 
-  getThumbnail(): Product[] {
-    return this.getAll().filter(product => product.imageUrl.includes('_thumb.'));
+  getThumbnail(): Observable<Product[]> {
+    return this.http.get<Product[]>(THUMB_URL);
   }
 
-  getDetail(id: string): Product[] {
-    console.log(id);
-    return this.getAll().filter(product => (product.id.toString() === id));
+  getDetail(id: string):Observable<Product[]> {
+    return this.http.get<Product[]>(PRODUCT_BY_ID_URL + id);
   }
 
-  getProductThumbnail(id: string): Product {
-    return this.getAll().filter(product => (product.id == +id && product.imageUrl.includes('_thumb.')))[0];
+  getProductThumbnail(id: string): Observable<Product> {
+    return this.http.get<Product>(THUMB_BY_ID_URL + id);
+
   }
+
   getAllProductsBySearchTerm(searchTerm: string){
-    return this.getAll().filter(product => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    return this.http.get<Product[]>(PRODUCT_BY_SEARCH_URL + searchTerm);
   }
-  getProductsByCategory(category: string): Product[] {
-    return this.getAll().filter(product => product.category ===category);
+  getProductsByCategory(category: string): Observable<Product[]> {
+    return this.http.get<Product[]>(PRODUCT_BY_CATE_URL + category);
 }
 }
