@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,13 @@ export class LoginComponent implements OnInit{
 
   loginForm!:FormGroup;
   isSubmitted = false;
-  Router: any;
-  constructor(private formBuilder:FormBuilder, private router: Router) { }
+
+  constructor(
+    private formBuilder:FormBuilder, 
+    private router: Router,
+    private userService: UserService,
+    private activatedRouter: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -29,7 +35,17 @@ export class LoginComponent implements OnInit{
     this.isSubmitted = true;
     if (this.loginForm.invalid) return;
     
-    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`)
-    this.router.navigate(['']);
+    // alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`)
+
+    this.userService.login({
+      email: this.fc.email.value,
+      password: this.fc.password.value
+    }).subscribe((user) => {
+      if (user.isAdmin) {
+        this.router.navigate(["admin"]); 
+        return;
+      }
+      this.router.navigate(["/"]);
+    });
   }
 }

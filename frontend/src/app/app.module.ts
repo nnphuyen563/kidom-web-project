@@ -32,7 +32,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleriaModule } from 'primeng/galleria';
 import { IndexComponent } from './components/partials/index/index.component';
-import { NavComponent } from './components/partials/nav/nav.component'; 
+import { NavComponent } from './components/partials/nav/nav.component';  
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { AdminComponent } from './components/admin/admin.component';
+import { ProductComponent } from './components/admin/product/product.component';
+import { OrderComponent } from './components/admin/order/order.component';
+import { CustomerComponent } from './components/admin/customer/customer.component';
+import { DiscountComponent } from './components/admin/discount/discount.component';
+import { BlogAdComponent } from './components/admin/blog-ad/blog-ad.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -60,6 +73,13 @@ import { NavComponent } from './components/partials/nav/nav.component';
     IndexComponent,
     NavComponent,
     PartialsAccountComponent,
+    AdminComponent,
+    ProductComponent,
+    OrderComponent,
+    CustomerComponent,
+    DiscountComponent,
+    BlogAdComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +91,16 @@ import { NavComponent } from './components/partials/nav/nav.component';
     BrowserAnimationsModule, 
     MatIconModule,
     GalleriaModule,
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      newestOnTop: false
+    }),
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

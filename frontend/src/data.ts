@@ -9,16 +9,20 @@ const catagoryPath ='assets/img/catagory/'
 
 export const USERS: User[] = [
     {
-        account: "tuanna21411@st.uel.edu.vn",
+        email: "tuanna21411@st.uel.edu.vn",
         password: "anhtuan716",
         name: "Nguyen Anh Tuan",
-        role: "normal",
+        isAdmin: false,
+        phone: "0123456789",
+        token: ''
     },
     {
-        account: "tuanna214112@st.uel.edu.vn",
+        email: "tuanna214112@st.uel.edu.vn",
         password: "anhtuan716",
         name: "Nguyen Anh Tuan",
-        role: "admin",
+        isAdmin: true,
+        phone: "0123456789",
+        token: ''
     }
 
 ]

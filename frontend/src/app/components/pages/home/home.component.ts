@@ -8,6 +8,8 @@ import { CatagoryService } from '../../../services/catagory.service';
 import { ActivatedRoute } from '@angular/router';
 import { Item } from '../../../../item';
 import { CartService } from '../../../services/cart.service';
+import { Observable } from 'rxjs';
+import { observeNotification } from 'rxjs/internal/Notification';
 
 @Component({
   selector: 'app-home',
@@ -29,19 +31,36 @@ export class HomeComponent {
     private bannerServices: BannerService,
     private productServices: ProductService,
     private activatedRoute: ActivatedRoute,
-    private catagoryServices: CatagoryService
+    private catagoryServices: CatagoryService,
       // Sửa tên thành activatedRoute
   ) {
+
+    
+
     this.banners = bannerServices.getAll();
-    this.products = productServices.getThumbnail();
-    this.catagorys= catagoryServices.getAll();
+
+    productServices.getThumbnail().subscribe(res => {
+      this.products = res;
+    });
+
+    this.catagorys = catagoryServices.getAll();
+
+    console.log(this.products);
+
+    let observeProduct: Observable<Product[]>;
+
+
 
     this.activatedRoute.params.subscribe((params) => {
       if (params.searchTerm) {
-        this.products = this.productServices.getAllProductsBySearchTerm(params.searchTerm);
+        observeProduct = this.productServices.getAllProductsBySearchTerm(params.searchTerm);
       } else {
-        this.products = productServices.getThumbnail();
+        observeProduct = productServices.getThumbnail();
       }
+
+      observeProduct.subscribe(res => {
+        this.products = res;
+      })
     });
   }
 

@@ -59,11 +59,11 @@
                     </div>
                     <!-- Nhập lại mật khẩu -->
                     <div class="input-group mb-2" >
-                        <input id="password2" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Nhập lại mật khẩu" formControlName="password2">
+                        <input id="confirmPassword" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Nhập lại mật khẩu" formControlName="confirmPassword">
                     </div>
-                    <div class="error-list mb-2" *ngIf="fc['password2'].errors && isSubmitted">
-                        <div class="errorlogin" *ngIf="fc['password2'].errors?.['required']">Không được để trống</div>
-
+                    <div class="error-list mb-2" *ngIf="fc['confirmPassword'].errors && isSubmitted">
+                        <div class="errorlogin" *ngIf="fc['confirmPassword'].errors?.['required']">Không được để trống</div>
+                        <div class="errorlogin" *ngIf="fc['confirmPassword'].errors?.['notMatch']">Mật khẩu không trùng nhau</div>
                     </div>
                     
                     <!-- Button -->

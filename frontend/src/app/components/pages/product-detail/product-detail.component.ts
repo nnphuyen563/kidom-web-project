@@ -33,10 +33,15 @@ export class ProductDetailComponent implements OnInit {
     private router: Router,
 
   ) {
-    
-      this.route.queryParams.subscribe(params => {
-      this.products = productService.getDetail(params['id']);
-      this.thumbnail = productService.getProductThumbnail(params['id']);
+    route.queryParams.subscribe(params => {
+      productService.getDetail(params['id']).subscribe(res => {
+        this.products = res;
+        console.log(params['id']);
+        console.log(this.products);
+      });
+      productService.getProductThumbnail(params['id']).subscribe(res => {
+        this.thumbnail = res;
+      });
       console.log(this.products);
     });
     this.catagorys= catagoryService.getAll(); 
@@ -65,7 +70,9 @@ export class ProductDetailComponent implements OnInit {
       const productId = params['id'];
       // Gọi phương thức hoặc service để lấy sản phẩm chi tiết (this.productServices.getDetail(productId))
       // Sau đó, gọi phương thức hoặc service để lấy các sản phẩm cùng danh mục
-      this.relatedProducts = this.productService.getProductsByCategory(this.thumbnail.category);
+      this.productService.getProductsByCategory(this.thumbnail.category).subscribe(res => {
+        this.relatedProducts = res;
+      });
   });
   }
 
