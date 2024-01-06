@@ -1,4 +1,12 @@
-
+body {
+    font-family: myFontSub!important;
+}
+* {
+    font-family: myFontSub;
+}
+h2 {
+    font-family: myFontSub;
+}
 .img {
     display: flex;
     float: left;
@@ -11,6 +19,7 @@
 h1 {
     color: white;
     font-weight: bolder;
+    font-family: myFontSub;
 }
 .hd {
     background-color: #0D5D9C;
@@ -24,6 +33,7 @@ h1 {
 p {
     color: #0D5D9C;
     text-align: justify;
+    font-family: myFontSub;
 }
 .deliverytext {
     color: #0D5D9C;
