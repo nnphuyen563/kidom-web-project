@@ -493,3 +493,40 @@ div .dot {
 h1 {
   font-size: 30px;
 }
+.logo1 {
+  width: 130px;
+}
+.cartlogo {
+  text-decoration: none;
+  color: #5881ff;
+  font-weight: bold;
+  font-size: large;
+  font-family: myFontSub;
+  text-align: right;
+  /* z-index: 999999; */
+}
+@media (max-width: 767px) {
+  .logo1 {
+      width: 70px;
+}
+  .cartlogo {
+    font-size: 14px;
+    text-align: right;
+  }
+}
+@media (max-width: 427px) {
+  .logo1 {
+      width: 60px;
+}
+  .cartlogo {
+    font-size: 12px;
+  }
+}
+@media (max-width: 389px) {
+  .logo1 {
+      width: 56px;
+}
+  .cartlogo {
+    font-size: 12px;
+  }
+}
