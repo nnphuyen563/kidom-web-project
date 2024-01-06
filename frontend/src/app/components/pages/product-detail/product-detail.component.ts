@@ -22,6 +22,7 @@ export class ProductDetailComponent implements OnInit {
     thumbnail: Product = new Product();
     quantity: number=1;
     relatedProducts: Product[] = [];
+    isClicked: boolean = false;
 
   constructor(
     private productService: ProductService,
@@ -32,13 +33,17 @@ export class ProductDetailComponent implements OnInit {
     private router: Router,
 
   ) {
-    route.queryParams.subscribe(params => {
+    
+      this.route.queryParams.subscribe(params => {
       this.products = productService.getDetail(params['id']);
       this.thumbnail = productService.getProductThumbnail(params['id']);
       console.log(this.products);
     });
     this.catagorys= catagoryService.getAll(); 
     // this.relatedProducts = productService.getAll();
+  }
+  toggleHeart() {
+    this.isClicked = !this.isClicked;
   }
 
 //chọn số lượng

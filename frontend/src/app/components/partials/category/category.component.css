@@ -26,3 +26,42 @@ h1, h2, h3, h4, h5, h6 {
 .texttieude {
   color: white;
 }
+.thanhtieude {
+    width: 60%;   
+
+}
+.tieude {
+    color: white;
+}
+
+.texttieude {
+    color: white;
+    font-size: 28px;
+}
+@media (max-width: 992px) {
+  .texttieude {
+      font-size: 14px;
+      margin-top: 5px;
+}
+}
+@media (max-width: 1200px) {
+  .cart-btn {
+      font-size: 14px;
+      padding: 12px 12px;
+}
+}
+
+@media (max-width: 992px) {
+  .cart-btn {
+      font-size: 10px;
+      padding: 12px 12px;
+}
+}
+
+@media (max-width: 430px) {
+  .cart-btn {
+      font-size: 10px;
+      padding: 12px 8px;
+}
+}
+

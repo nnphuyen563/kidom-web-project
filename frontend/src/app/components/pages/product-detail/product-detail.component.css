@@ -13,6 +13,7 @@ body {
 .add-to-cart:hover{
     background-color: #F52A41;
     color: #ffffff;
+    border-radius: 10px;
 }
 /* CSS tùy chỉnh cho button "Mua ngay" */
 .buy-now {
@@ -111,3 +112,19 @@ body {
     transform: scale(1.05);
 }
     
+
+.btn-heart {
+    color: #000; /* Default color for the heart icon */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+.clicked {
+    color: red; /* Color when the button is clicked */
+}
+
+@media (max-width: 992px) {
+    .btntext {
+        font-size: 14px;
+        padding: 6px 6px;
+}
+}

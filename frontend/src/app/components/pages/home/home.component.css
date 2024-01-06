@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 10px
 }
 .thanhtieude {
-    width: 40%;   
+    width: 50%;   
 
 }
 .tieude {
@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .texttieude {
     color: white;
+    font-size: 28px;
 }
 .h5 {
     size: 10px;
@@ -118,14 +119,32 @@ transition: transform 0.3s ease-in-out;
         display: none;
     }
 }
-@media (max-width: 488px) {
-    .divcategory {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    /* Khi kích thước màn hình nhỏ hơn hoặc bằng 768px, điều chỉnh kích thước chữ */
+@media (max-width: 800px) {
     .texttieude {
-        font-size: 1em;
-    }
+        font-size: 12px;
+        margin-top: 5px;
 }
+}
+@media (max-width: 600px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+}
+}
+@media (max-width: 1033px) {
+    .cart-btn {
+        margin-left: 1px;
+        padding: 12px 0px;
+}
+}
+
+@media (max-width: 570px) {
+    .cart-btn {
+        padding: auto;
+        font-size: 10px;
+        margin-left: 1px;
+        padding: 12px 10px;
+}
+}
+
