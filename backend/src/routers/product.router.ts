@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { CATAGORYS, PRODUCTS } from "../data";
+import { CATAGORYS } from "../data";
+import PRODUCTS from "../data";
 import asyncHandler from "express-async-handler";
 import { ProcductModel, Product } from "../models/product.model";
 
@@ -10,7 +11,6 @@ function getAll(products: Product[]) {
     var data = [];
 
     for (var item of products) {
-
         for (var img of item.imageUrl) {
             var temp = JSON.parse(JSON.stringify(item));
             temp.imageUrl = img;
@@ -51,7 +51,7 @@ router.get("/search/:searchTerm", asyncHandler(
             {name: {$regex: searchRegex}}
         );
 
-        const products = getAll(data).filter(product => product.imageUrl.includes('_thumb.'));
+        const products = getAll(data).filter(product => (product.imageUrl || '').includes('_thumb.'));
         res.send(products);
     }
 ))
@@ -81,7 +81,7 @@ router.get("/thumb/:id", asyncHandler(
         const id = req.params.id;
         //const thumb = req.params.thumb;
         const data = await ProcductModel.find();
-        const img_thumb = getAll(data).filter(product => product.id == +id && product.imageUrl.includes('_thumb.'))[0];    
+        const img_thumb = getAll(data).filter(product => product.id === id && product.imageUrl.includes('_thumb.'))[0];    
         
         res.send(img_thumb);
     }

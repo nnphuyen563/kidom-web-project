@@ -5,6 +5,7 @@ declare var addName: any;
 declare var $: any;
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { CartService } from '../../../services/cart.service';
+import { Product } from '../../../shared/models/Product';
 
 // import 'assets/js/design-by-you.js';
 
@@ -46,25 +47,25 @@ export class DesignByYouComponent implements OnInit{
   nameBear: string = "Teddy Bear"
   image: any =
     "assets/img/animals/teddy-bear.png";
-  id: number = -1;
+  id: string = "BEAR";
 
   teddy() {
       this.nameBear = "Teddy Bear";
       this.image =
         "assets/img/animals/teddy-bear.png";
-      this.id = -1;
+      this.id = "BEAR";
     }
   rabbit() {
     this.nameBear = "Pink Rabbit";
     this.image =
       "assets/img/animals/rabbit.png";
-      this.id = -2;
+      this.id = "RABBIT";
   }
   monkey() {
     this.nameBear = "Brown Monkey";
     this.image =
       "assets/img/animals/monkey.png";
-      this.id = -3;
+      this.id = "MONKEY";
   }
 
   loadJsFunc() {
@@ -104,7 +105,7 @@ export class DesignByYouComponent implements OnInit{
 	}
 
   addToCart() {
-    var data = {
+    var data: Product = {
         imageUrl: this.image,
         name: this.nameBear,
         category: 'Design By You',

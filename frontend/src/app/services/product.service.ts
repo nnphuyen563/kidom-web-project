@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../shared/models/Product';
-import { PRODUCTS } from '../../data';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PRODUCTS_URL, PRODUCT_BY_CATE_URL, PRODUCT_BY_ID_URL, PRODUCT_BY_SEARCH_URL, THUMB_BY_ID_URL, THUMB_URL } from '../shared/constants/urls';

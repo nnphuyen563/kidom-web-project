@@ -1,7 +1,7 @@
 import { Timestamp } from "rxjs";
 
 export class Product {
-    id!: number;
+    id!: string;
     name!: string;
     price!: number;
     category!: string;

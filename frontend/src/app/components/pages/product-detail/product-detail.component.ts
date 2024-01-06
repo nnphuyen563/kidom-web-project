@@ -87,11 +87,11 @@ export class ProductDetailComponent implements OnInit {
 
 
   // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
-  addToCart(thumbnail: Item) {
-    this.cartService.addToCart(this.thumbnail);
+  addToCart(thumbnail: Product) {
+    this.cartService.addToCart(thumbnail);
   }
-  buyNow(thumbnail: Item) {
-    this.cartService.addToCart(this.thumbnail);
+  buyNow(thumbnail: Product) {
+    this.cartService.addToCart(thumbnail);
     //Chuyển qua cart
     this.router.navigate(['/cart']);
   }

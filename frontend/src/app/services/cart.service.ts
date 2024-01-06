@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Item } from '../../item';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../shared/models/Product';
-import { PRODUCTS } from '../../data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private cartItems: Item[] = [];
+  private cartItems: Product[] = [];
   private cartItemCount: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor() {
@@ -28,7 +26,7 @@ export class CartService {
     }
   }
 
-  addToCart(item: Item, alert: Boolean = true) {
+  addToCart(item: Product, alert: Boolean = true) {
     this.loadCartItemsFromLocalStorage();
 
     const existingItemIndex = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
@@ -66,7 +64,7 @@ export class CartService {
     this.updateLocalStorage(); // Cập nhật dữ liệu vào localStorage sau khi thay đổi giỏ hàng
   }
 
-  removeFromCart(item: Item) {
+  removeFromCart(item: Product) {
     const existingItemIndex = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
 
     if (existingItemIndex !== -1) {
@@ -80,12 +78,12 @@ export class CartService {
     this.updateLocalStorage(); // Cập nhật dữ liệu vào localStorage sau khi thay đổi giỏ hàng
   }
 
-  updateCartItems(items: Item[]) {
+  updateCartItems(items: Product[]) {
     this.cartItems = items;
     this.updateLocalStorage(); // Cập nhật dữ liệu vào localStorage sau khi thay đổi giỏ hàng
   }
 
-  updateCartItemQuantity(item: Item) {
+  updateCartItemQuantity(item: Product) {
     // Kiểm tra số lượng mới có hợp lệ (lớn hơn 0) hay không
     if (item.quantity > 0) {
       // Cập nhật số lượng sản phẩm

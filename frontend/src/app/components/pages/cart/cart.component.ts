@@ -3,6 +3,7 @@ import { CartService } from '../../../services/cart.service';
 import { Item } from '../../../../item';
 import { User } from '../../../../user';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Product } from '../../../shared/models/Product';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +11,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
   styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
-  cartItems: Item[] = [];
+  cartItems: Product[] = [];
   total: number = 0;
   promotion: any = '';
   userInfo: User | any;
@@ -52,7 +53,7 @@ export class CartComponent implements OnInit {
     this.total = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
-  removeFromCart(item: Item) {
+  removeFromCart(item: Product) {
     this.cartService.removeFromCart(item);
     this.calculateTotal();
   }
@@ -63,7 +64,7 @@ export class CartComponent implements OnInit {
     this.total = 0;
   }
 
-  updateQuantity(item: Item) {
+  updateQuantity(item: Product) {
     this.cartService.updateCartItemQuantity(item);
     this.calculateTotal();
   }

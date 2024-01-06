@@ -39,7 +39,7 @@ export class CategoryComponent implements OnInit {
     }
   }
 
-  addToCart(product: Item) {
+  addToCart(product: Product) {
     // Gọi hàm addToCart từ CartService để thêm sản phẩm vào giỏ hàng
     this.cartService.addToCart(product);
   }
