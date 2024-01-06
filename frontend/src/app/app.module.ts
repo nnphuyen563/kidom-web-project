@@ -34,6 +34,16 @@ import { IndexComponent } from './components/partials/index/index.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProductComponent } from './components/admin/product/product.component';
+import { OrderComponent } from './components/admin/order/order.component';
+import { CustomerComponent } from './components/admin/customer/customer.component';
+import { DiscountComponent } from './components/admin/discount/discount.component';
+import { BlogAdComponent } from './components/admin/blog-ad/blog-ad.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -60,6 +70,12 @@ import { AdminComponent } from './components/admin/admin.component';
     TitleComponent,
     IndexComponent,
     AdminComponent,
+    ProductComponent,
+    OrderComponent,
+    CustomerComponent,
+    DiscountComponent,
+    BlogAdComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +92,11 @@ import { AdminComponent } from './components/admin/admin.component';
       timeOut: 3000,
       positionClass: 'toast-bottom-right',
       newestOnTop: false
-    })
+    }),
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

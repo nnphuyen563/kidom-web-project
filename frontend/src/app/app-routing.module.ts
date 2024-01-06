@@ -15,6 +15,12 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { DesignByYouComponent } from './components/pages/design-by-you/design-by-you.component';
 import { IndexComponent } from './components/partials/index/index.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { BlogAdComponent } from './components/admin/blog-ad/blog-ad.component';
+import { CustomerComponent } from './components/admin/customer/customer.component';
+import { DiscountComponent } from './components/admin/discount/discount.component';
+import { OrderComponent } from './components/admin/order/order.component';
+import { ProductComponent } from './components/admin/product/product.component';
+import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -41,7 +47,17 @@ const routes: Routes = [
     ]
   },
   {path: 'design-by-you', component: DesignByYouComponent},
-  {path: 'admin', component: AdminComponent}
+  {   path: 'admin', component: AdminComponent,
+      children: [
+        {path: 'admin', component: AdminComponent},
+        {path: 'blogad', component: BlogAdComponent},
+        {path: 'customer', component: CustomerComponent},
+        {path: 'discount', component: DiscountComponent},
+        {path: 'order', component: OrderComponent},
+        {path: 'product', component: ProductComponent},
+        {path: 'dashboard', component: DashboardComponent}
+      ]
+  }
 ];
 
 @NgModule({
