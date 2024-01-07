@@ -38,27 +38,27 @@ export const BANNERS: Banner[] = [
 
 export const CATAGORYS: Catagory[] = [
     {
-        imageUrl: catagoryPath + 'action.jpg',
-        name: "Hành động",
+        imageUrl: catagoryPath + 'bupbegaubong.png',
+        name: "Búp bê - Gấu bông",
     },
     {
-        imageUrl: catagoryPath + 'art.jpg',
-        name: "Mỹ thuật"
+        imageUrl: catagoryPath + 'dochoingoaitroi.png',
+        name: "Đồ chơi ngoài trời"
     },
     {
-        imageUrl: catagoryPath + 'boardgame.jpg',
-        name: "Board Game",
+        imageUrl: catagoryPath + 'hoatrang.png',
+        name: "Hoá trang",
     },
     {
-        imageUrl: catagoryPath + 'collect.jpg',
-        name: "Bộ sưu tập"
+        imageUrl: catagoryPath + 'thethao.png',
+        name: "Thể thao"
     },
     {
-        imageUrl: catagoryPath + 'doll.jpg',
-        name: "Búp bê",
+        imageUrl: catagoryPath + 'thucongmythuat.png',
+        name: "Thủ công - Mỹ thuật",
     },
     {
-        imageUrl: catagoryPath + 'outdoor.jpg',
-        name: "Trò chơi ngoài trời"
+        imageUrl: catagoryPath + 'trochoitritue.png',
+        name: "Trò chơi trí tuệ"
     }
 ]

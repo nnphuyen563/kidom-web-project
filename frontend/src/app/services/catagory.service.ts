@@ -8,16 +8,25 @@ import { CATEGORIES_URL } from '../shared/constants/urls';
 @Injectable({
     providedIn: 'root'
 })
+// export class CatagoryService {
+
+//     constructor(private http:HttpClient) { }
+
+//     getAll(): Catagory[] {
+//         var data: Catagory[] = [];
+//         this.http.get<Catagory[]>(CATEGORIES_URL).subscribe(response => {
+//             data = response;
+//         });
+
+//         return data;
+//     } 
+    
+// }
 export class CatagoryService {
 
-    constructor(private http:HttpClient) { }
+    constructor() { }
 
-    getAll(): Catagory[] {
-        var data: Catagory[] = [];
-        this.http.get<Catagory[]>(CATEGORIES_URL).subscribe(response => {
-            data = response;
-        });
-
-        return data;
-    } 
+    getAll(): Catagory [] {
+        return CATAGORYS;
+    }
 }
