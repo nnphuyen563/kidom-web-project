@@ -19,5 +19,5 @@ export class CatagoryService {
         });
 
         return data;
-    }
+    } 
 }
