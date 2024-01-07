@@ -1,4 +1,7 @@
-const BASE_URL = 'http://localhost:5000';
+import donetv from "dotenv";
+donetv.config({ path: "../../../../../.env" });
+
+const BASE_URL = 'http://localhost:' + process.env.PORT;
 
 export const PRODUCTS_URL = BASE_URL + '/api/product';
 

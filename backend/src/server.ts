@@ -1,5 +1,5 @@
 import donetv from "dotenv";
-donetv.config();
+donetv.config({path: "../../.env"});
 
 import express from "express";
 import cors from "cors";
@@ -21,7 +21,6 @@ import userRouter from './routers/user.router';
 app.use("/api/product", productRouter);
 app.use("/api/user", userRouter);
 
-const port = 5000;
-app.listen(port, () => {
-    console.log(`Server is running on port http://localhost:` + port);
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port http://localhost:` + process.env.PORT);
 })

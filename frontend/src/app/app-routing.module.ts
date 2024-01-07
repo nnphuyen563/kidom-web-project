@@ -47,7 +47,7 @@ const routes: Routes = [
     ]
   },
   {path: 'design-by-you', component: DesignByYouComponent},
-  {   path: 'admin', component: AdminComponent,
+  {path: 'admin', component: AdminComponent,
       children: [
         {path: 'admin', component: AdminComponent},
         {path: 'blogad', component: BlogAdComponent},
