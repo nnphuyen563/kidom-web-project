@@ -21,6 +21,7 @@ import { DiscountComponent } from './components/admin/discount/discount.componen
 import { OrderComponent } from './components/admin/order/order.component';
 import { ProductComponent } from './components/admin/product/product.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
+import { ProductListComponent } from './components/pages/product-list/product-list.component';
 
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
       {path: 'search/:searchTerm', component:HomeComponent},
       {path: 'aboutus', component: AboutUsComponent},
       {path: 'cart', component: CartComponent},
+      {path: 'product', component: ProductListComponent},
     ]
   },
   {path: 'design-by-you', component: DesignByYouComponent},
