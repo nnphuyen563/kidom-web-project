@@ -14,12 +14,15 @@ export class CartService {
   }
 
   private updateLocalStorage() {
+    //Thêm để check
+    console.log('Updated Cart Items:', this.cartItems);
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
     this.cartItemCount.next(this.cartItems.reduce((total, item) => total + item.quantity, 0));
   }
 
   private loadCartItemsFromLocalStorage() {
     const cartData = localStorage.getItem('cart');
+    console.log('Loaded Cart Items from LocalStorage:', cartData);
     if (cartData) {
       this.cartItems = JSON.parse(cartData);
       this.cartItemCount.next(this.cartItems.reduce((total, item) => total + item.quantity, 0));
@@ -28,21 +31,30 @@ export class CartService {
 
   addToCart(item: Product, alert: Boolean = true) {
     this.loadCartItemsFromLocalStorage();
-
+    //Thêm để check
+    console.log('Cart Items after loading:', this.cartItems);
     const existingItemIndex = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
 
     if (existingItemIndex !== -1) {
       const existingItem = this.cartItems[existingItemIndex];
+      //Thêm vào check
+      console.log('Existing Item:', existingItem);
       // Kiểm tra số lượng sản phẩm trong kho trước khi thêm vào giỏ hàng
       if (existingItem.quantity < item.quantity) {
         const quantityToAdd = Math.min(item.quantity - existingItem.quantity, existingItem.quantity);
         existingItem.quantity += quantityToAdd; // Cộng dồn số lượng sản phẩm cùng loại trong giỏ hàng
       }
+      //Thêm vào check
+      console.log('Cart Items after updating:', this.cartItems);
     } else {
+      //Thêm vào check
+      console.log('New Item:', item);
       // Kiểm tra số lượng sản phẩm trong kho trước khi thêm vào giỏ hàng
       if (item.quantity > 0) {
         this.cartItems.push({ ...item, quantity: 1 }); // Thêm vào giỏ hàng với số lượng là 1
       }
+      //Thêm vào check
+      console.log('Cart Items after adding new item:', this.cartItems);
     }
     if (alert) {
       this.showSuccessToast("Thêm vào giỏ hàng thành công")
@@ -56,6 +68,8 @@ export class CartService {
   }
 
   getCartItems() {
+    //Thêm vào check
+    console.log('Cart Items:', this.cartItems);
     return this.cartItems;
   }
 
