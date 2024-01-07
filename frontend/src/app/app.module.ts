@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { TitleComponent } from './components/partials/title/title.component';
 import { UserService } from './services/user.service';
+import { ProductListComponent } from './components/pages/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -50,12 +51,13 @@ import { UserService } from './services/user.service';
     FaqComponent,
     PolicyComponent,
     TitleComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     UserService

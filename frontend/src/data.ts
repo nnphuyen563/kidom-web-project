@@ -63,7 +63,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '1_thumb.png',
         name: "Hộp màu",
-        category: 'Mỹ thuật',
+        category: 'Đồ chơi ngoài trời',
         price: 199.000,
         id: 1,
         description: 'Description of product 1',
@@ -172,7 +172,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '2_thumb.png',
         name: "Toy's name",
-        category: 'Con bo',
+        category: 'Búp bê - Gấu bông',
         price: 199.999,
         id: 2,
         description: 'Description of product 2a',
@@ -184,7 +184,7 @@ export const PRODUCTS: Product[] = [
     {
         imageUrl: productPath + '3_thumb.jpg',
         name: "Toy's name",
-        category: 'Toy',
+        category: 'Thủ công - Mỹ thuật',
         price: 199.999,
         id: 3,
         description: 'Description of product 3a',

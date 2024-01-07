@@ -11,6 +11,7 @@ import { PolicyComponent } from './components/pages/policy/policy.component';
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { AboutUsComponent } from './components/pages/about-us/about-us.component';
 import { CartComponent } from './components/pages/cart/cart.component';
+import { ProductListComponent } from './components/pages/product-list/product-list.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'aboutus', component: AboutUsComponent},
   {path: 'search/:searchTerm', component:HomeComponent},
   {path: 'aboutus', component: AboutUsComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'product', component: ProductListComponent}
 ];
 
 @NgModule({
