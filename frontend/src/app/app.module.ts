@@ -46,6 +46,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { ProductListComponent } from './components/pages/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { MatButtonModule } from '@angular/material/button';
     DiscountComponent,
     BlogAdComponent,
     DashboardComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
