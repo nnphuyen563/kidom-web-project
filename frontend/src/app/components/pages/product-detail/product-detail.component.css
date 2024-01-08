@@ -1,8 +1,8 @@
-
 body {
-    font-family: myFontSub !important; 
+    font-family: myFontSub !important;
 }
-.add-to-cart{
+
+.add-to-cart {
     background-color: #328320;
     color: #ffffff;
     border-radius: 10px;
@@ -10,10 +10,12 @@ body {
     width: 100%;
     transition: background-color 0.3s, color 0.3s;
 }
-.add-to-cart:hover{
+
+.add-to-cart:hover {
     background-color: #F52A41;
     color: #ffffff;
 }
+
 /* CSS tùy chỉnh cho button "Mua ngay" */
 .buy-now {
     background-color: #0D5D9C;
@@ -22,6 +24,7 @@ body {
     height: 50px;
     width: 100%;
 }
+
 /*chỉnh chọn số lượng*/
 .pro-qty {
     display: flex;
@@ -45,32 +48,38 @@ body {
     width: 40px;
     height: 100%;
 }
+
 .title {
     font-size: 30px !important;
     font-weight: bold;
     color: #407EC9;
     font-family: myFontSub;
 }
+
 .price {
     font-size: 25px;
     color: #F52A41;
     font-weight: bold;
-} 
+}
 
 
 .p-galleria-thumbnail {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%; /* Đảm bảo chiều cao của thumbnail là 100% */
+    height: 100%;
+    /* Đảm bảo chiều cao của thumbnail là 100% */
 }
+
 .product-img img {
     border: 1px solid #ddd;
     padding: 5px;
     border-radius: 10px;
 }
+
 /* Chọn nội dung của tab "Mô tả sản phẩm" */
-.product-details-tab-desc, .tab-pane {
+.product-details-tab-desc,
+.tab-pane {
     /* Màu chữ trong nội dung tab */
     color: #333;
     /* Màu nền của nội dung tab */
@@ -79,15 +88,18 @@ body {
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd; /* Bổ sung đường viền nếu cần thiết */
+    border: 1px solid #ddd;
+    /* Bổ sung đường viền nếu cần thiết */
     border-radius: 10px;
 }
+
 /*----------------------------------*/
-.user-review img{
+.user-review img {
     width: 60px;
     padding-right: 15px;
 }
-.user-review-text p{
+
+.user-review-text p {
     padding-left: 65px;
 }
 
@@ -105,9 +117,8 @@ body {
 .card {
     transition: transform 0.3s ease-in-out;
 }
-    
+
 /* Áp dụng hiệu ứng zoom khi di chuột qua ảnh */
 .card:hover {
     transform: scale(1.05);
 }
-    

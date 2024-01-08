@@ -17,7 +17,6 @@ import { SignupComponent } from './components/pages/signup/signup.component';
 import { CategoryComponent } from './components/partials/category/category.component';
 import { IndexComponent } from './components/partials/index/index.component';
 
-
 const routes: Routes = [
   {
     //path: 'admin',component:DashboardComponent,canActivate: [RoleGuardService],data: {expectedRole: "ROLE_ADMIN"},
@@ -26,28 +25,25 @@ const routes: Routes = [
     children: [{ path: 'product', component: ProductAdminComponent }],
   },
   {
-    path: '', component:IndexComponent,
+    path: '',
+    component: IndexComponent,
     children: [
-      {path: '', component:HomeComponent},
-      {path: 'productDetail/:productName', component:ProductDetailComponent},
-      {path: 'login', component:LoginComponent},
-      {path: 'signup', component:SignupComponent},
-      {path: 'forget-pass', component:ForgotPassComponent},
-      {path: 'search/:searchTerm', component:HomeComponent},
-      {path: 'productDetail/:productId', component:ProductDetailComponent},
-      {path: 'account', component:AccountComponent},
-      {path: 'catagory/:catagoryName', component: CategoryComponent},
-      {path: 'search/:searchTerm', component:HomeComponent},
-      {path: 'faq', component:FaqComponent},
-      {path: 'policy', component:PolicyComponent},
-      {path: 'blog', component:BlogComponent},
-      {path: 'aboutus', component: AboutUsComponent},
-      {path: 'search/:searchTerm', component:HomeComponent},
-      {path: 'aboutus', component: AboutUsComponent},
-      {path: 'cart', component: CartComponent},
-    ]
+      { path: '', component: HomeComponent },
+      { path: 'productDetail/:productName', component: ProductDetailComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'signup', component: SignupComponent },
+      { path: 'forget-pass', component: ForgotPassComponent },
+      { path: 'account', component: AccountComponent },
+      { path: 'catagory/:catagoryName', component: CategoryComponent },
+      { path: 'search/:searchTerm', component: HomeComponent },
+      { path: 'faq', component: FaqComponent },
+      { path: 'policy', component: PolicyComponent },
+      { path: 'blog', component: BlogComponent },
+      { path: 'aboutus', component: AboutUsComponent },
+      { path: 'cart', component: CartComponent },
+    ],
   },
-  {path: 'design-by-you', component: DesignByYouComponent}
+  { path: 'design-by-you', component: DesignByYouComponent },
 ];
 
 @NgModule({

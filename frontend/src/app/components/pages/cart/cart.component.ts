@@ -1,13 +1,13 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { CartService } from '../../../services/cart.service';
-import { Item } from '../../../../item';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../../../user';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { CartService } from '../../../services/cart.service';
+import { Item } from '../../../shared/models/Item';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit {
   cartItems: Item[] = [];
@@ -19,37 +19,32 @@ export class CartComponent implements OnInit {
   paymentHandler: any = null;
   discountAmount: number = 0;
 
-
   stripeTest!: FormGroup;
 
-  createToken(): void {
-  }
+  createToken(): void {}
 
   constructor(
     private cartService: CartService,
     private renderer: Renderer2,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.stripeTest = this.fb.group({
-      name: ['', [Validators.required]]
+      name: ['', [Validators.required]],
     });
     this.cartItems = this.cartService.getCartItems();
     this.calculateTotal();
     this.initConfig((this.total - this.discountAmount) / 25000);
-
-
-
   }
 
-  private initConfig(total: any): void {
-  
-  }
-
+  private initConfig(total: any): void {}
 
   private calculateTotal() {
-    this.total = this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    this.total = this.cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
   }
 
   removeFromCart(item: Item) {
@@ -76,7 +71,7 @@ export class CartComponent implements OnInit {
       this.userInfo.address = this.guestAddress;
       this.userInfo.phone = this.guestPhone;
       if (this.selectedPaymentMethod == 'thẻ tín dụng') {
-        alert("Thanh toán thành công");
+        alert('Thanh toán thành công');
         this.resetForm();
         this.clearCart();
       }
@@ -88,16 +83,13 @@ export class CartComponent implements OnInit {
         phone: this.guestPhone,
       };
       if (this.selectedPaymentMethod == 'tiền mặt') {
-        alert("Thanh toán thành công");
+        alert('Thanh toán thành công');
         this.resetForm();
         this.clearCart();
-      }
-      else {
-       
+      } else {
       }
     }
   }
-
 
   resetForm() {
     // Reset giá trị của guestInfo về một đối tượng trống
@@ -118,7 +110,10 @@ export class CartComponent implements OnInit {
   selectedPaymentMethod: string = '';
 
   CartNotEmpty(): boolean {
-    return this.cartItems.length > 0 && (this.selectedPaymentMethod === 'tiền mặt' || this.selectedPaymentMethod === 'thẻ tín dụng');
+    return (
+      this.cartItems.length > 0 &&
+      (this.selectedPaymentMethod === 'tiền mặt' ||
+        this.selectedPaymentMethod === 'thẻ tín dụng')
+    );
   }
-
 }

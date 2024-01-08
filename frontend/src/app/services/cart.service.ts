@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Item } from '../../item';
 import { BehaviorSubject } from 'rxjs';
-import { Product } from '../shared/models/Product';
-import { PRODUCTS } from '../../data';
+import { Item } from '../shared/models/Item';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
   private cartItems: Item[] = [];
-  private cartItemCount: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  private cartItemCount: BehaviorSubject<number> = new BehaviorSubject<number>(
+    0
+  );
 
   constructor() {
     this.loadCartItemsFromLocalStorage(); // Load dữ liệu giỏ hàng từ LocalStorage khi khởi tạo service
@@ -17,27 +17,36 @@ export class CartService {
 
   private updateLocalStorage() {
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
-    this.cartItemCount.next(this.cartItems.reduce((total, item) => total + item.quantity, 0));
+    this.cartItemCount.next(
+      this.cartItems.reduce((total, item) => total + item.quantity, 0)
+    );
   }
 
   private loadCartItemsFromLocalStorage() {
     const cartData = localStorage.getItem('cart');
     if (cartData) {
       this.cartItems = JSON.parse(cartData);
-      this.cartItemCount.next(this.cartItems.reduce((total, item) => total + item.quantity, 0));
+      this.cartItemCount.next(
+        this.cartItems.reduce((total, item) => total + item.quantity, 0)
+      );
     }
   }
 
   addToCart(item: Item, alert: Boolean = true) {
     this.loadCartItemsFromLocalStorage();
 
-    const existingItemIndex = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
+    const existingItemIndex = this.cartItems.findIndex(
+      (cartItem) => cartItem.id === item.id
+    );
 
     if (existingItemIndex !== -1) {
       const existingItem = this.cartItems[existingItemIndex];
       // Kiểm tra số lượng sản phẩm trong kho trước khi thêm vào giỏ hàng
       if (existingItem.quantity < item.quantity) {
-        const quantityToAdd = Math.min(item.quantity - existingItem.quantity, existingItem.quantity);
+        const quantityToAdd = Math.min(
+          item.quantity - existingItem.quantity,
+          existingItem.quantity
+        );
         existingItem.quantity += quantityToAdd; // Cộng dồn số lượng sản phẩm cùng loại trong giỏ hàng
       }
     } else {
@@ -47,10 +56,10 @@ export class CartService {
       }
     }
     if (alert) {
-      this.showSuccessToast("Thêm vào giỏ hàng thành công")
+      this.showSuccessToast('Thêm vào giỏ hàng thành công');
     }
 
-    this.updateLocalStorage(); 
+    this.updateLocalStorage();
   }
 
   getCartItemCount() {
@@ -67,7 +76,9 @@ export class CartService {
   }
 
   removeFromCart(item: Item) {
-    const existingItemIndex = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
+    const existingItemIndex = this.cartItems.findIndex(
+      (cartItem) => cartItem.id === item.id
+    );
 
     if (existingItemIndex !== -1) {
       this.cartItems[existingItemIndex].quantity -= 1; // Giảm số lượng sản phẩm trong giỏ hàng đi 1
@@ -89,7 +100,9 @@ export class CartService {
     // Kiểm tra số lượng mới có hợp lệ (lớn hơn 0) hay không
     if (item.quantity > 0) {
       // Cập nhật số lượng sản phẩm
-      const cartItem = this.cartItems.find(cartItem => cartItem.id === item.id);
+      const cartItem = this.cartItems.find(
+        (cartItem) => cartItem.id === item.id
+      );
       if (cartItem) {
         cartItem.quantity = item.quantity;
       }
@@ -99,8 +112,6 @@ export class CartService {
   }
 
   private showSuccessToast(message: string): void {
-    alert(message)
+    alert(message);
   }
 }
-
-

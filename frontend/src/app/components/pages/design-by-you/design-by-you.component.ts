@@ -1,10 +1,10 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+import { CartService } from '../../../services/cart.service';
 declare var addAcc: any;
 declare var removeAcc: any;
 declare var addName: any;
 declare var $: any;
-import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { CartService } from '../../../services/cart.service';
 
 // import 'assets/js/design-by-you.js';
 
@@ -14,8 +14,7 @@ import { CartService } from '../../../services/cart.service';
   styleUrl: './design-by-you.component.css',
   providers: [NgbModalConfig, NgbModal],
 })
-export class DesignByYouComponent implements OnInit{
-
+export class DesignByYouComponent implements OnInit {
   ngOnInit() {
     $(() => {
       console.log('hello there!');
@@ -43,28 +42,24 @@ export class DesignByYouComponent implements OnInit{
     }
   }
   //change bear
-  nameBear: string = "Teddy Bear"
-  image: any =
-    "assets/img/animals/teddy-bear.png";
+  nameBear: string = 'Teddy Bear';
+  image: any = 'assets/img/animals/teddy-bear.png';
   id: number = -1;
 
   teddy() {
-      this.nameBear = "Teddy Bear";
-      this.image =
-        "assets/img/animals/teddy-bear.png";
-      this.id = -1;
-    }
+    this.nameBear = 'Teddy Bear';
+    this.image = 'assets/img/animals/teddy-bear.png';
+    this.id = -1;
+  }
   rabbit() {
-    this.nameBear = "Pink Rabbit";
-    this.image =
-      "assets/img/animals/rabbit.png";
-      this.id = -2;
+    this.nameBear = 'Pink Rabbit';
+    this.image = 'assets/img/animals/rabbit.png';
+    this.id = -2;
   }
   monkey() {
-    this.nameBear = "Brown Monkey";
-    this.image =
-      "assets/img/animals/monkey.png";
-      this.id = -3;
+    this.nameBear = 'Brown Monkey';
+    this.image = 'assets/img/animals/monkey.png';
+    this.id = -3;
   }
 
   loadJsFunc() {
@@ -76,50 +71,54 @@ export class DesignByYouComponent implements OnInit{
   onLoadfunc() {
     new addAcc();
   }
-  onBtnClick(){
+  onBtnClick() {
     // Call the sayHello() function from hello.js file
     new removeAcc();
   }
   changeName() {
     new addName();
   }
-  constructor(private el: ElementRef, private renderer:Renderer2,
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
     config: NgbModalConfig,
     private modalService: NgbModal,
     private cartService: CartService
-    ){
-      config.backdrop = 'static';
-		  config.keyboard = false;
+  ) {
+    config.backdrop = 'static';
+    config.keyboard = false;
 
-      this.loadJsFunc();
-    }
+    this.loadJsFunc();
+  }
 
-  ngAfterViewInit(){
-
-  this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#FDF0F0');
+  ngAfterViewInit() {
+    this.renderer.setStyle(
+      this.el.nativeElement.ownerDocument.body,
+      'backgroundColor',
+      '#FDF0F0'
+    );
   }
   order(content: any) {
-		this.modalService.open(content);
-    this.addToCart();
-	}
-
-  addToCart() {
-    var data = {
-        imageUrl: this.image,
-        name: this.nameBear,
-        category: 'Design By You',
-        price: 450.000,
-        id: this.id,
-        description: 'Description of product 1',
-        star: 5,
-        stock: 50,
-        time: new Date(),
-        quantity: this.quantity
-    }
-
-    console.log(data);
-
-		this.cartService.addToCart(data, false);
+    this.modalService.open(content);
+    //this.addToCart();
   }
 
+  // addToCart() {
+  //   var data = {
+  //       imageUrl: this.image,
+  //       name: this.nameBear,
+  //       category: 'Design By You',
+  //       price: 450.000,
+  //       id: this.id,
+  //       description: 'Description of product 1',
+  //       star: 5,
+  //       stock: 50,
+  //       time: new Date(),
+  //       quantity: this.quantity
+  //   }
+
+  //   console.log(data);
+
+  // 	this.cartService.addToCart(data, false);
+  // }
 }

@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/css/sb-admin-2.css";
-/* @import "./assets/css/style.css"; */
+
 @import "primeicons/primeicons.css";
+
+/* @import "./assets/css/style.css"; */
 
 @font-face {
     font-family: myFontMain;
@@ -11,6 +13,14 @@
 @font-face {
     font-family: myFontSub;
     src: url("assets/font/SAYURI - Vag Light.ttf");
+}
+
+.p-galleria .p-galleria-thumbnail-container {
+    background: #ffffff;
+}
+
+.p-galleria .p-galleria-item-nav {
+    color: slategray !important;
 }
 
 :root {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { CategoryService } from '../../../services/category.service';
+import { CatagoryService } from '../../../services/catagory.service';
 import { ImageService } from '../../../services/image.service';
-import { ProductAdminService } from '../../../services/productAdmin.service';
+import { ProductService } from '../../../services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -21,7 +21,7 @@ export class ProductAdminComponent implements OnInit {
   currentFile?: File;
 
   listImageChoosen: any = [];
-  imageChoosen: any;
+  imageChoosen: any = null;
 
   onUpdate: boolean = false;
   showForm: boolean = false;
@@ -39,9 +39,9 @@ export class ProductAdminComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private productAdminService: ProductAdminService,
+    private productService: ProductService,
     private imageService: ImageService,
-    private categoryService: CategoryService
+    private categoryService: CatagoryService
   ) {}
 
   ngOnInit(): void {
@@ -90,7 +90,7 @@ export class ProductAdminComponent implements OnInit {
   }
 
   getListProduct() {
-    this.productAdminService.getListProduct().subscribe({
+    this.productService.getListProduct().subscribe({
       next: (res) => {
         this.listProduct = res;
         console.log(this.listProduct);
@@ -149,7 +149,7 @@ export class ProductAdminComponent implements OnInit {
     const { name, description, price, quantity, categoryId, imageIds } =
       this.productForm;
     console.log(this.productForm);
-    this.productAdminService
+    this.productService
       .createProduct(name, description, price, quantity, categoryId, imageIds)
       .subscribe({
         next: (res) => {
@@ -171,7 +171,7 @@ export class ProductAdminComponent implements OnInit {
     const { id, name, description, price, quantity, categoryId, imageIds } =
       this.productForm;
     console.log(this.productForm);
-    this.productAdminService
+    this.productService
       .updateProduct(
         id,
         name,
@@ -201,7 +201,7 @@ export class ProductAdminComponent implements OnInit {
   }
 
   deleteProduct() {
-    this.productAdminService.deleteProduct(this.productForm.id).subscribe({
+    this.productService.deleteProduct(this.productForm.id).subscribe({
       next: (res) => {
         this.getListProduct();
         this.showWarn('Xóa thành công');

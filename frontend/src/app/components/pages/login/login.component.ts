@@ -5,19 +5,18 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
-export class LoginComponent implements OnInit{
-
-  loginForm!:FormGroup;
+export class LoginComponent implements OnInit {
+  loginForm!: FormGroup;
   isSubmitted = false;
   Router: any;
-  constructor(private formBuilder:FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email:['', [Validators.required, Validators.email]],
-      password:['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
     });
   }
 
@@ -25,11 +24,20 @@ export class LoginComponent implements OnInit{
     return this.loginForm.controls;
   }
 
-  submit(){
+  submit() {
     this.isSubmitted = true;
     if (this.loginForm.invalid) return;
-    
-    alert(`email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`)
+    if (
+      this.fc['email'].value == 'Admin@gmail.com' &&
+      this.fc['password'].value == 'Password@123'
+    ) {
+      this.router.navigate(['/admin']);
+      return;
+    }
+
+    alert(
+      `email: ${this.fc['email'].value}, password: ${this.fc['password'].value}`
+    );
     this.router.navigate(['']);
   }
 }

@@ -1,4 +1,3 @@
-
 <h2>Giỏ hàng</h2>
 <div class="container">
   <table class="cart-table">
@@ -15,7 +14,7 @@
       <tr *ngFor="let item of cartItems" class="cart-item">
         <td>
           <img
-            src="{{ item.imageUrl }}"
+            src="{{ 'data:image/jpg;base64,' + item.images[0].data }}"
             alt=""
             style="height: 100px; width: 100px"
           />
@@ -111,18 +110,15 @@
         />
         Thẻ tín dụng
       </label>
-      <div *ngIf="selectedPaymentMethod == 'thẻ tín dụng'">
-
-      </div>
+      <div *ngIf="selectedPaymentMethod == 'thẻ tín dụng'"></div>
     </form>
   </div>
 
   <div class="cart-total" style="border-radius: 10px">
-    Tổng thanh toán: {{ (total) | number : "1.0-0" }} ₫
+    Tổng thanh toán: {{ total | number : "1.0-0" }} ₫
   </div>
 
   <div *ngIf="CartNotEmpty()" style="margin-left: auto">
     <button class="checkout-btn" (click)="checkout()">Thanh toán</button>
   </div>
 </div>
-

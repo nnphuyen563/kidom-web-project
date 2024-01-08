@@ -1,4 +1,5 @@
 export class Catagory {
-    imageUrl!: string;
-    name!: string;
+  imageUrl!: string;
+  name!: string;
+  id!: number;
 }
