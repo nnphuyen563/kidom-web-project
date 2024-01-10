@@ -1,0 +1,10 @@
+Step 1. Create database
++ DatabaseName: kidom
++ username: root
++ password: password@123
+
+Step 2. Run each sql command in turn in the file (.\backend\kidom\Script.sql)
+
+Step 3. Start Backend
+
+Step 4. Start Frontend
